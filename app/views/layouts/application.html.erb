@@ -11,11 +11,11 @@
   <header>
     <ul class="navbar-nav ml-auto">
           <% if customer_signed_in? %>
-            <li><%= link_to ' ホーム',items_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
+            <li><%= link_to ' ホーム',root_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
             <li><%= link_to ' マイページ',customers_path(current_customer),class: 'fas fa-address-card nav-link text-danger' %></li>
             <li><%= link_to ' ログアウト', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-danger' %></li>
           <% else %>
-            <li><%= link_to ' ホーム',items_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
+            <li><%= link_to ' ホーム',root_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
             <li><%= link_to ' 新規登録', new_customer_registration_path,class: 'fas fa-user-plus nav-link text-danger' %></li>
             <li><%= link_to ' ログイン', new_customer_session_path ,class: 'fas fa-sign-in-alt nav-link text-danger'%></li>
           <% end %>
