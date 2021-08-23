@@ -4,7 +4,7 @@ class AnimalsController < ApplicationController
   end
 
   def index
-    @animal = animal.all(pramus[:id])
+    @animal = Animal.where(is_active: true)
   end
 
   def create
@@ -22,9 +22,13 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    @animal = Animal.find(params[:id])
   end
 
   def destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
+    redirecy_to 
   end
   
   private
