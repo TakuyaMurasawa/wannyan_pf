@@ -28,13 +28,13 @@ class AnimalsController < ApplicationController
   def destroy
     @animal = Animal.find(params[:id])
     @animal.destroy
-    redirecy_to 
+    redirecy_to customer_path
   end
   
   private
   
   def animal_params
-    
+    params.require(:animal).permit(:title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other)
   end
   
 end
