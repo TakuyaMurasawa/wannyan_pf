@@ -1,0 +1,36 @@
+<h4>マイページ</h4>
+      <span class="title">登録情報<span>
+      <span class="customer_edit"><%= link_to "編集する", edit_customer_path,class: "btn btn-sm btn-success" %></span>
+      <table border="1" style="border-collapse: collapse" class="customer_show_table">
+        <tr>
+          <th class="customer_show_th">氏名</th>
+          <th class="customer_show_th_content"><%= @customer.last_name + @customer.first_name %></th>
+        </tr>
+        <tr>
+          <th class="customer_show_th">カナ</th>
+          <th class="customer_show_th_content"><%= @customer.last_name_kana + @customer.first_name_kana %></th>
+        </tr>
+        <tr>
+          <th class="customer_show_th" >郵便番号</th>
+          <th class="customer_show_th_content">〒<%= @customer.postcode%></th>
+        </tr>
+        <tr>
+          <th class="customer_show_th">住所</th>
+          <th class="customer_show_th_content"><%= @customer.prefecture + @customer.city + @customer.house_number + @customer.other%></th>
+        </tr>
+        <tr>
+          <th class="customer_show_th">電話番号</th>
+          <th class="customer_show_th_content"><%= @customer.phone_number%></th>
+        </tr>
+        <tr>
+          <th class="customer_show_th">メールアドレス</th>
+          <th class="customer_show_th_content"><%= @customer.email%></th>
+        </tr>
+    </table>
+    <div class="link">
+      <h3>譲渡一覧</h3>
+    </div>
+    <br>
+    <div class="link">
+      <h3>譲受一覧</h3>
+    </div>
