@@ -4,20 +4,21 @@ class AnimalsController < ApplicationController
   end
 
   def index
-    @animal = Animal.where(is_active: true)
+    @animals = Animal.all
   end
 
   def create
-    @animal = Animal.create params.require(:comment).permit(:content, images: [])
+    @animal = Animal.create params.require(:animal).permit(:title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other, images: [])
+    redirect_to animal_path
   end
 
   def edit
-    @animal = Animal.find(params[:id]) 
+    @animal = Animal.find(params[:id])
   end
 
   def update
     @animal = Animal.find(params[:id])
-    @animal.update params.require(:comment).permit(:content, images: [])
+    @animal.update params.require(:animal).permit(:title, images: [])
     redirect_to @comment
   end
 
@@ -30,11 +31,11 @@ class AnimalsController < ApplicationController
     @animal.destroy
     redirecy_to customer_path
   end
-  
+
   private
-  
+
   def animal_params
     params.require(:animal).permit(:title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other)
   end
-  
+
 end
