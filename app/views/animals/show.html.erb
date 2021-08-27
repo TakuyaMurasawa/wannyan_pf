@@ -1,2 +1,26 @@
-<h1>Animals#show</h1>
-<p>Find me in app/views/animals/show.html.erb</p>
+<h3><%= @animal.title %></h3>
+<%= attachment_image_tag @animal, :image, fill, 300, 300 %>
+<table class="customer_table">
+                        <tr>
+                            <th class="customer_edit_th">種類</th>
+                            <td><%= @animal.tipe %></td>
+                        </tr>
+                        <tr>
+                            <th class="customer_edit_th">性別</th>
+                            <td><%= @animal.sex %></td>
+                        </tr>
+                            <th class="customer_edit_th">誕生日</th>
+                            <td><%= @animal.birthday %></td>
+                        </tr>
+                            <th class="customer_edit_th">所在地</th>
+                            <td><%= @animal.prefecture %>)円</td>
+                        </tr>
+                        <tr>
+                            <th class="customer_edit_th">プロフィール</th>
+                            <td><%= @item.profile %></td>
+                        </tr>
+                        <tr>
+                            <th class="customer_edit_th">その他</th>
+                            <td><%= @item.other %></td>
+                        </tr>
+                    </table>

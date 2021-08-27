@@ -1,0 +1,21 @@
+ja:
+  enums:
+    animal:
+      tipe:
+        dog: "犬"
+        cat: "猫"
+        dogcat: "すべて"
+      sex:
+        male: "オス"
+        female: "メス"
+        borhsides: "すべて"
+      vaccine:
+        already: "済"
+        notyet: "未"
+        unknown: "不明"
+      castrate:
+        sumi: "済"
+        mada: "未"
+        humei: "不明"  
+
+    

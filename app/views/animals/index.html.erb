@@ -2,6 +2,6 @@
 <%= link_to "募集する", new_animal_path %>
 　<% @animals.each do |animal| %>
     <%= link_to animal_path(animal) do %>
-           <%= image_tag image %> <br>
+           <image src="<%= image_tag image %>"> <br>
     <% end %>
 　<% end %>

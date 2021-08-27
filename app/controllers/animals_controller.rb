@@ -8,7 +8,10 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    @animal = Animal.create params.require(:animal).permit(:title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other, images: [])
+    @animal = Animal.new(animal_params)
+    @animal.customer_id = current_customer.id
+    # @animal = Animal.create params.require(:animal).permit(:title,  :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other, images: [], )
+    @animal.save
     redirect_to animal_path
   end
 
@@ -29,13 +32,13 @@ class AnimalsController < ApplicationController
   def destroy
     @animal = Animal.find(params[:id])
     @animal.destroy
-    redirecy_to customer_path
+    redirect_to customer_path
   end
 
   private
 
   def animal_params
-    params.require(:animal).permit(:title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other)
+    params.require(:animal).permit(:image_id, :title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other,)
   end
 
 end
