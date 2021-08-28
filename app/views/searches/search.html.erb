@@ -1,0 +1,13 @@
+<% @searches.each do |animal| %>
+  <p>
+      <%= link_to animal_path(animal) do %>
+        <%= attachment_image_tag animal, :image, :fill, 250, 125, format: 'jpeg', class: "img" %>
+      <% end %>
+    </p>
+    <p>
+      <%= animal.title %>
+    </p>
+    <p>
+      <%= animal.prefecture %>
+    </p>
+<% end %>

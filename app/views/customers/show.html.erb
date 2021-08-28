@@ -1,3 +1,6 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-11 offset-lg-1 ">
 <h4>マイページ</h4>
       <span class="title">登録情報<span>
       <span class="customer_edit"><%= link_to "編集する", edit_customer_path,class: "btn btn-sm btn-success" %></span>
@@ -7,7 +10,7 @@
           <th class="customer_show_th_content"><%= @customer.last_name + @customer.first_name %></th>
         </tr>
         <tr>
-          <th class="customer_show_th">カナ</th>
+          <th class="customer_show_th">フリガナ</th>
           <th class="customer_show_th_content"><%= @customer.last_name_kana + @customer.first_name_kana %></th>
         </tr>
         <tr>
@@ -34,3 +37,6 @@
     <div class="link">
       <h3>譲受一覧</h3>
     </div>
+    </div>
+  </div>
+</div>

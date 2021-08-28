@@ -69,6 +69,10 @@ gem 'rubocop'
 gem 'rubocop-rails'
 
 gem 'kaminari'
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'rails-i18n'
+gem 'enum_help'
 
 gem 'dotenv-rails'
 group :production do

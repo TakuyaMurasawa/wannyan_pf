@@ -1,0 +1,36 @@
+<div class="search-form">
+  <%= form_with(scope: :search, url: search_path, method: :get, local: true) do |f| %>
+    <div class="field">
+      <%= f.label :profile, "キーワード" %>
+      <%= f.text_field :profile, placeholder: '半角のみ', value: @search_params[:profile] %>
+    </div>
+    <div class="field">
+      <%= f.label :prefecture, "募集地域" %>
+      <%= f.text_field :prefecture, placeholder: '半角のみ', value: @search_params[:prefecture] %>
+    </div>
+    <div class="field">
+      <%= f.label :tipe, "種類" %>
+      <%= f.collection_radio_buttons(:tipe, Animal.tipes, :first, :first) do |r| %>
+  　　<%= r.radio_button(checked: r.value == @search_params[:tipe]) + r.text %>
+　　　<% end %>
+    </div>
+    <div class="field">
+      <%= f.label :sex, "性別" %>
+      <%= f.collection_radio_buttons(:sex, Animal.sexes, :first, :first) do |r| %>
+  　　<%= r.radio_button(checked: r.value == @search_params[:sex]) + r.text %>
+　　　<% end %>
+    </div>
+    <div class="field">
+      <%= f.label :vaccine, "ワクチン" %>
+      <%= f.collection_radio_buttons(:vaccine, Animal.vaccines, :first, :first) do |r| %>
+  　　<%= r.radio_button(checked: r.value == @search_params[:vaccine]) + r.text %>
+　　　<% end %>
+    </div>
+    <div class="field">
+      <%= f.label :castrate, "去勢手術" %>
+      <%= f.collection_radio_buttons(:castrate, Animal.castrates, :first, :first) do |r| %>
+  　　<%= r.radio_button(checked: r.value == @search_params[:castrate]) + r.text %>
+　　　<% end %>
+    </div>
+    <%= submit_tag '検索', class: "button" %>
+  <% end %>

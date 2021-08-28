@@ -1,10 +1,13 @@
 class AnimalsController < ApplicationController
+  
+
   def new
     @animal = Animal.new
   end
 
   def index
-    @animals = Animal.all
+     @search_params = Search.new
+     @animals = Animal.all.page(params[:page]).per(9)
   end
 
   def create
@@ -12,7 +15,7 @@ class AnimalsController < ApplicationController
     @animal.customer_id = current_customer.id
     # @animal = Animal.create params.require(:animal).permit(:title,  :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other, images: [], )
     @animal.save
-    redirect_to animal_path
+    redirect_to animal_path(@animal)
   end
 
   def edit

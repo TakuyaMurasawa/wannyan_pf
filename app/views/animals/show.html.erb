@@ -1,5 +1,5 @@
 <h3><%= @animal.title %></h3>
-<%= attachment_image_tag @animal, :image, fill, 300, 300 %>
+<%= attachment_image_tag @animal, :image, :fill, 300, 300 %>
 <table class="customer_table">
                         <tr>
                             <th class="customer_edit_th">種類</th>
@@ -17,10 +17,10 @@
                         </tr>
                         <tr>
                             <th class="customer_edit_th">プロフィール</th>
-                            <td><%= @item.profile %></td>
+                            <td><%= @animal.profile %></td>
                         </tr>
                         <tr>
                             <th class="customer_edit_th">その他</th>
-                            <td><%= @item.other %></td>
+                            <td><%= @animal.other %></td>
                         </tr>
                     </table>
