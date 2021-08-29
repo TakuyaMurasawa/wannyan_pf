@@ -8,7 +8,7 @@
             <th class="customer_edit_th">写真</th>
             <td><%= f.attachment_field :image %></td>
           </tr>
-          <tr>prefecture
+          <tr>
             <th class="customer_edit_th">タイトル</th>
             <td><%= f.text_field :title %></td>
           </tr>
@@ -16,10 +16,7 @@
             <th class="customer_edit_th">種類</th>
             <td><%= f.radio_button :tipe, :dog %>犬
 
-            <%= f.radio_button :tipe, :cat %>猫
-
-            <%= f.radio_button :tipe, :dogcat %>すべて</td>
-
+            <%= f.radio_button :tipe, :cat %>猫</td>
           </tr>
            <tr>
             <th class="customer_edit_th">性別</th>

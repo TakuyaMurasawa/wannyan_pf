@@ -1,26 +1,61 @@
-<h3><%= @animal.title %></h3>
-<%= attachment_image_tag @animal, :image, :fill, 300, 300 %>
-<table class="customer_table">
-                        <tr>
-                            <th class="customer_edit_th">種類</th>
-                            <td><%= @animal.tipe %></td>
-                        </tr>
-                        <tr>
-                            <th class="customer_edit_th">性別</th>
-                            <td><%= @animal.sex %></td>
-                        </tr>
-                            <th class="customer_edit_th">誕生日</th>
-                            <td><%= @animal.birthday %></td>
-                        </tr>
-                            <th class="customer_edit_th">所在地</th>
-                            <td><%= @animal.prefecture %>)円</td>
-                        </tr>
-                        <tr>
-                            <th class="customer_edit_th">プロフィール</th>
-                            <td><%= @animal.profile %></td>
-                        </tr>
-                        <tr>
-                            <th class="customer_edit_th">その他</th>
-                            <td><%= @animal.other %></td>
-                        </tr>
-                    </table>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+    <%= attachment_image_tag @animal, :image, :fill, 300, 300 %>
+    <h3><%= @animal.title %></h3>
+    </div>
+    <div class="col-lg-4 offset-lg-4">
+      <table class="table">
+        <tr>
+          <th>ユーザー名</th>
+          <td><%= @animal.customer.user_name %></td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td><%= @animal.customer.prefecture %></td>
+        </tr>
+      </table>
+      <% if @animal.customer == current_customer %>
+        <%=link_to "削除する", animal_path(@animal),method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-sm btn-danger" %>
+      <% else %>
+        <%=link_to "応募画面に行く", customer_path(@animal.customer),  class:"btn btn-primary btn-lg user-show-chat" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tr>
+        <th class="customer_edit_th">種類</th>
+        <td><%= @animal.tipe_i18n %></td>
+      </tr>
+      <tr>
+        <th class="customer_edit_th">性別</th>
+        <td><%= @animal.sex_i18n %></td>
+      </tr>
+      <tr>
+        <th class="customer_edit_th">誕生日</th>
+        <td><%= @animal.birthday %></td>
+      </tr>
+      <tr>
+        <th class="customer_edit_th">所在地</th>
+        <td><%= @animal.prefecture %></td>
+      </tr>
+      <tr>
+        <th class="customer_edit_th">ワクチン</th>
+        <td><%= @animal.vaccine_i18n %></td>
+      </tr>
+      <tr>
+        <th class="customer_edit_th">去勢手術</th>
+        <td><%= @animal.castrate_i18n %></td>
+      </tr>
+      <tr>
+        <th class="customer_edit_th">プロフィール</th>
+        <td><%= @animal.profile %></td>
+      </tr>
+      <tr>
+        <th class="customer_edit_th">その他</th>
+        <td><%= @animal.other %></td>
+      </tr>
+</table>
+</div>
+</div>

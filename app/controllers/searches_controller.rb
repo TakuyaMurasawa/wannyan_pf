@@ -18,7 +18,8 @@ class SearchesController < ApplicationController
   # end
   def search
     @search_params = reservation_search_params
-    @searches = Search.search(@search_params).joins(:animal)
+    # @searches = Search.search(@search_params).joins(:animal)
+    @searches = Animal.search(@search_params).page(params[:page]).per(8).reverse_order
   end
 
   private

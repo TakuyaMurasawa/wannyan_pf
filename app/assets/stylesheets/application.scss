@@ -14,3 +14,50 @@
  *= require_self
  */
  @import "bootstrap";
+
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+header{
+  background-color: #FCEAC7;
+}
+
+header li{
+  margin:0 15px;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+nav{
+  margin-right: 30px;
+}
+
+.nav-item{
+  color:#ff8c00;
+}
+
+.nav-item:hover{
+  color:#ff8c00;
+}
+
+main {
+  flex: 1;
+  background-color: #FDF5E6;
+}
+
+footer{
+  background-color: #FCEAC7;
+  text-align: right;
+  padding-right: 30px;
+}
+
+

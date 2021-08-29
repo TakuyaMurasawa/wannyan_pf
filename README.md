@@ -60,6 +60,4 @@
 - IDE：Cloud9
 
 ## 使用素材
-- 音声素材・[DOVA-SYNDROME](https://dova-s.jp/)
-- 動画素材・[PIXTA](https://pixta.jp/footage/c22)
-- 画像素材・[Pexels](https://www.pexels.com/ja-jp/)
+- 画像素材・[pixabay](https://pixabay.com/ja/images/search/%E7%8C%AB%E3%81%A8%E7%8A%AC/)

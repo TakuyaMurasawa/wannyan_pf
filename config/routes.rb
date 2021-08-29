@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   resources :customers, only: [:show, :edit, :update]
   resources :animals
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show]
   
   get '/search', to: 'searches#search'
 

@@ -18,7 +18,6 @@ ja:
   enums:
     animal:
       tipe:
-        dogcat: "すべて"
         dog: "犬"
         cat: "猫"
       sex:

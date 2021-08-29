@@ -5,11 +5,11 @@ class Search < ApplicationRecord
     return if search_params.blank?
 
     profile_like(search_params[:profile])
-      .prefecture_like(search_params[:gender])
-      .tipe_is(search_params[:sex])
-      .sex_is(search_params[:gender])
-      .vaccine_is(search_params[:gender])
-      .castrate_is(search_params[:gender])
+      .prefecture_like(search_params[:prefecture])
+      .tipe_is(search_params[:tipe])
+      .sex_is(search_params[:sex])
+      .vaccine_is(search_params[:vaccine])
+      .castrate_is(search_params[:castrate])
   end
 
   scope :profile_like, -> (profile) { where('profile LIKE ?', "%#{profile}%") if profile.present? }

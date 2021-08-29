@@ -8,26 +8,37 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body>
   <header>
-    <ul class="navbar-nav ml-auto">
+    <nav class="navbar">
+      <%= link_to root_path do %>
+          <%= image_tag 'logo.png',:size =>'250x100' %>
+        <% end %>
+        <ul class="nav pull-right nav-pills">
           <% if customer_signed_in? %>
-            <li><%= link_to ' Home',root_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
-            <li><%= link_to ' WaNyan',animals_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
-            <li><%= link_to ' MyPage',customer_path(current_customer),class: 'fas fa-address-card nav-link text-danger' %></li>
-            <li><%= link_to ' LogOut', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-danger' %></li>
+            <li><%= link_to ' Home',root_path,class: 'nav-item' %></li>
+            <li><%= link_to ' WaNyan',animals_path,class: 'nav-item' %></li>
+            <li><%= link_to ' MyPage',customer_path(current_customer),class: 'nav-item' %></li>
+            <li><%= link_to ' LogOut', destroy_customer_session_path, method: :delete,class: 'nav-item' %></li>
           <% else %>
-            <li><%= link_to ' Home',root_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
-            <li><%= link_to ' WaNyan',animals_path,class: 'fas fa-cookie-bite nav-link text-danger' %></li>
-            <li><%= link_to ' SignUp', new_customer_registration_path,class: 'fas fa-user-plus nav-link text-danger' %></li>
-            <li><%= link_to ' LogIn', new_customer_session_path ,class: 'fas fa-sign-in-alt nav-link text-danger'%></li>
+            <li><%= link_to ' Home',root_path,class: 'nav-item' %></li>
+            <li><%= link_to ' WaNyan',animals_path,class: 'nav-item' %></li>
+            <li><%= link_to ' SignUp', new_customer_registration_path,class: 'nav-item' %></li>
+            <li><%= link_to ' LogIn', new_customer_session_path ,class: 'nav-item'%></li>
           <% end %>
-          </ul>
+        </ul>
+    </nav>
   </header>
 
-  <body>
+  <main>
     <%= yield %>
+  </main>
+  <footer>
+    <span class="footer-text">
+          〇県〇市〇〇町〇丁目〇番</br>
+          Tel: ×××-××××-××××<br>
+          mail: wannyan@mail.com
+    </span>
+  </footer>
   </body>
-  <fotter>
-
-  </fotter>
 </html>

@@ -10,27 +10,30 @@
     </div>
     <div class="field">
       <%= f.label :tipe, "種類" %>
-      <%= f.collection_radio_buttons(:tipe, Animal.tipes, :first, :first) do |r| %>
-  　　<%= r.radio_button(checked: r.value == @search_params[:tipe]) + r.text %>
-　　　<% end %>
+      <%= f.radio_button :tipe, '', {:checked => true} %>指定なし
+      <%= f.radio_button :tipe, 0 %>犬
+      <%= f.radio_button :tipe, 1 %>猫
     </div>
     <div class="field">
       <%= f.label :sex, "性別" %>
-      <%= f.collection_radio_buttons(:sex, Animal.sexes, :first, :first) do |r| %>
-  　　<%= r.radio_button(checked: r.value == @search_params[:sex]) + r.text %>
-　　　<% end %>
+      <%= f.radio_button :sex, '', {:checked => true} %>指定なし
+      <%= f.radio_button :sex, 1 %>オス
+      <%= f.radio_button :sex, 2 %>メス
+      <%= f.radio_button :sex, 0 %>オス・メス
     </div>
     <div class="field">
       <%= f.label :vaccine, "ワクチン" %>
-      <%= f.collection_radio_buttons(:vaccine, Animal.vaccines, :first, :first) do |r| %>
-  　　<%= r.radio_button(checked: r.value == @search_params[:vaccine]) + r.text %>
-　　　<% end %>
+      <%= f.radio_button :vaccine, '', {:checked => true} %>指定なし
+      <%= f.radio_button :vaccine, 1 %>済
+      <%= f.radio_button :vaccine, 2 %>未
+      <%= f.radio_button :vaccine, 0 %>不明
     </div>
     <div class="field">
       <%= f.label :castrate, "去勢手術" %>
-      <%= f.collection_radio_buttons(:castrate, Animal.castrates, :first, :first) do |r| %>
-  　　<%= r.radio_button(checked: r.value == @search_params[:castrate]) + r.text %>
-　　　<% end %>
+      <%= f.radio_button :castrate, '', {:checked => true} %>指定なし
+      <%= f.radio_button :castrate, 1 %>済
+      <%= f.radio_button :castrate, 2 %>未
+      <%= f.radio_button :castrate, 0 %>不明
     </div>
     <%= submit_tag '検索', class: "button" %>
   <% end %>

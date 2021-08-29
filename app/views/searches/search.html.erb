@@ -1,13 +1,24 @@
-<% @searches.each do |animal| %>
-  <p>
-      <%= link_to animal_path(animal) do %>
-        <%= attachment_image_tag animal, :image, :fill, 250, 125, format: 'jpeg', class: "img" %>
-      <% end %>
-    </p>
-    <p>
-      <%= animal.title %>
-    </p>
-    <p>
-      <%= animal.prefecture %>
-    </p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="width">
+　    <% @searches.each do |animal| %>
+　      <div class="height">
+          <p class="img_wrap">
+            <%= link_to animal_path(animal) do %>
+              <%= attachment_image_tag animal, :image, :fill, 250, 250, format: 'jpeg', class: "img" %>
+            <% end %>
+          </p>
+          <p>
+            <%= animal.title %>
+          </p>
+          <p>
+            <%= animal.prefecture %>
+          </p>
+        </div>
+　    <% end %>
+　    <div class="center-block">
+        <%= paginate @searches %>
+      </div>
+    </div>
+  </div>
+</div>
