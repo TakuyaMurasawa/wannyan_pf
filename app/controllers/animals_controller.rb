@@ -39,8 +39,11 @@ end
 
   def update
     @animal = Animal.find(params[:id])
-    @animal.update params.require(:animal).permit(:title, images: [])
-    redirect_to @comment
+    if @animal.update(animal_params)
+      redirect_to animal_path(@animal.id), notice: "You have updated user successfully."
+    else
+      render :edit
+    end
   end
 
   def show

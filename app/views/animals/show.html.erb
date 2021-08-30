@@ -16,6 +16,7 @@
         </tr>
       </table>
       <% if @animal.customer == current_customer %>
+        <%=link_to "編集する", edit_animal_path(@animal), class: "btn btn-sm btn-success" %>
         <%=link_to "削除する", animal_path(@animal),method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-sm btn-danger" %>
       <% else %>
         <%=link_to "応募画面に行く", customer_path(@animal.customer),  class:"btn btn-primary btn-lg user-show-chat" %>
