@@ -59,7 +59,7 @@ end
   private
 
   def animal_params
-    params.require(:animal).permit(:image, :title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other,)
+    params.require(:animal).permit(:image, :title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other)
   end
 
 end
