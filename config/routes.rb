@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
-    resources :customers, only: [:new, :destroy, :create]
+    resources :customers, expect: [:new, :destroy, :create]
+    resources :animals, expect: [:new, :create, :update]
   end
 end
