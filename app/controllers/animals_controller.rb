@@ -3,6 +3,9 @@ before_action :authenticate_customer!, only: [:edit, :new, :show]
 
 before_action :correct_post,only: [:edit]
 
+before_action :set_amimal, only: [:correct_post, :edit, :update, :show, :destroy]
+
+
 def authenticate_customer!
        unless customer_signed_in?
         redirect_to new_customer_session_path
@@ -10,11 +13,13 @@ def authenticate_customer!
 end
 
 def correct_post
-        @animal = Animal.find(params[:id])
+        # @animal = Animal.find(params[:id])
     unless @animal.customer.id == current_customer.id
       redirect_to animals_path
     end
 end
+
+
 
   def new
     @animal = Animal.new
@@ -34,11 +39,11 @@ end
   end
 
   def edit
-    @animal = Animal.find(params[:id])
+    # @animal = Animal.find(params[:id])
   end
 
   def update
-    @animal = Animal.find(params[:id])
+    # @animal = Animal.find(params[:id])
     if @animal.update(animal_params)
       redirect_to animal_path(@animal.id), notice: "You have updated user successfully."
     else
@@ -47,17 +52,22 @@ end
   end
 
   def show
-    @animal = Animal.find(params[:id])
+    # @animal = Animal.find(params[:id])
   end
 
   def destroy
-    @animal = Animal.find(params[:id])
+    # @animal = Animal.find(params[:id])
     @animal.destroy
     redirect_to customer_path(current_customer.id)
   end
 
   private
 
+  
+  def set_amimal
+    @animal = Animal.find(params[:id])
+  end
+  
   def animal_params
     params.require(:animal).permit(:image, :title, :tipe, :sex, :birthday, :prefecture, :vaccine, :vaccine_date, :castrate, :profile, :other)
   end
