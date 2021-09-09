@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
-    before_action :authenticate_customer!, only: [:edit, :show]
+before_action :authenticate_customer!, only: [:edit, :show]
+
+before_action :set_customer, only: [:edit, :update]
 
 def authenticate_customer!
        unless customer_signed_in?
@@ -43,6 +45,10 @@ end
 
   private
 
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
+  
   def customer_params
     params.require(:customer).permit(:user_name, :last_name, :first_name, :last_name_kana, :first_name_kana, :postcode, :prefecture, :city, :house_number,:other, :phone_number, :email )
   end
