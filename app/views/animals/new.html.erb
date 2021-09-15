@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <th class="customer_edit_th">お誕生日</th>
-            <td><%= f.date_select :birthday, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1) %></td>
+            <td><%= f.date_select :birthday, use_month_numbers: true,start_year: 1930, default: Date.new(1989, 1, 1) %></td>
           </tr>
           <tr>
             <th class="customer_edit_th">所在地(都道府県)</th>
@@ -44,7 +44,7 @@
           </tr>
           <tr>
           　<th class="customer_edit_th">ワクチン接種日</th>
-            <td><%= f.date_select :birthday, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1999, 1, 1) %></td>
+            <td><%= f.date_select :birthday, use_month_numbers: true,start_year: 1930, default: Date.new(1999, 1, 1) %></td>
           </tr>
           <tr>
             <th class="customer_edit_th">去勢手術</th>
