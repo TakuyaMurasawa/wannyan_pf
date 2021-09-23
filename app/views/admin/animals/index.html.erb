@@ -3,10 +3,21 @@
     <h2>Wanyan</h2>
   </div>
   <div class ="row">
-    <%= @customers.each do |customer| %>
-    <div class="customer-height">
-      <%= link_to customer.user_name, customer_path(customer) %>
-    </div>
-    <%end%>
+    <table>
+      <thead>
+        <tr>
+          <th>ユーザー名</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= @customers.each do |customer| %>
+          <tr>
+            <td><%= link_to customer.user_name, customer_path(customer) %></td>
+            <td></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
   </div>
 </div>
