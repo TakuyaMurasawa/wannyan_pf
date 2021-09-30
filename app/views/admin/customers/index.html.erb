@@ -1,14 +1,23 @@
-<div class ="container">
+<div class="container">
   <div class="row">
-    <h2>顧客一覧</h2>
+    <h2>Wanyan</h2>
   </div>
-  <div class="row">
-    <table>
-      <thead>
+  <div class ="row">
+    <table class="table">
+      <thead class ="thead-light">
         <tr>
-          <th></th>
+          <th>ユーザー名</th>
+          <th>所在地</th>
         </tr>
       </thead>
+      <tbody>
+        <%= @customers.each do |customer| %>
+          <tr>
+            <td><%= link_to customer.user_name, customer_path(customer) %></td>
+            <td><% customer.prefecture %></td>
+          </tr>
+        <%end%>
+      </tbody>
     </table>
   </div>
 </div>
