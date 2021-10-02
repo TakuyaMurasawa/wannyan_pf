@@ -7,11 +7,6 @@ class Admin::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  def destroy
-    @animal = Animal.find(params[:id])
-    @animal.destroy
-  end
-
   private
 
   def customer_params
