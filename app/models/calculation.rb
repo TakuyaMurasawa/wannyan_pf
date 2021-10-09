@@ -6,6 +6,18 @@ class Calculation < ApplicationRecord
   (n - 1).times { a, b, c = b, c, a + b + c }
   a
   end
+  
+  def tribonacci n
+  if n == 1
+    return 1
+  elsif n == 2
+    return 1
+  elsif n == 3
+    return 2
+  else
+    return tribonacci(n - 3) + tribonacci(n - 2) + tribonacci(n - 1)
+  end
+　end
 
 　def yakusuu
 　  
