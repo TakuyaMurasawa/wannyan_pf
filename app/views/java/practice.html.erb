@@ -101,7 +101,7 @@ class Main {
         break;
       }
       
-      System.out.println(i);
+      System.out.println(i);  //1,2,3,4
       i++;
     }
     
@@ -112,7 +112,7 @@ class Main {
         continue;
       }
       
-      System.out.println(j);
+      System.out.println(j); //1,2,4,5,7,8,10
     }
     
     // 変数namesに、配列を代入してください
@@ -147,5 +147,11 @@ class Main {
                  今回の場合要素は３つなので i<3 まで表示
     for(int i=0;i<names.length;i++){
       System.out.println("私の名前は"+names[i]+"です");
+    }
+    
+    *forの配列表示の拡張系
+    　 (データ型 変数名:配列名)
+    for(String name:names){
+      System.out.println(name);
     }
 }
