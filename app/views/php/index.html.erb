@@ -17,11 +17,14 @@ require_once('menu.php');
     <h3>メニュー<?php echo Menu::getCount() ?>品</h3>
     <form method="post" action="confirm.php">
       <div class="menu-items">
-        <?php foreach ($menus as $menu): ?>
+        
+        <?php foreach ($menus as $menu): ?> //$menus内の情報を繰り返しで提示
           <div class="menu-item">
             <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
             <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
-            <?php if ($menu instanceof Drink): ?>
+            
+            <?php if ($menu instanceof Drink): ?>　//繰り返し処理で持ってきた情報がdrink,foodどちらに属するものか判定する
+            　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　今回の場合はdrinkに属していた場合他の処理を実行する
               <p class="menu-item-type"><?php echo $menu->getType() ?></p>
             <?php else: ?>
               <!-- for文を用いて、spicinessプロパティの数だけ繰り返し処理を行ってください -->
@@ -34,6 +37,7 @@ require_once('menu.php');
             <span>個</span>
           </div>
         <?php endforeach ?>
+        
       </div>
       <input type="submit" value="注文する">
     </form>
