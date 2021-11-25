@@ -2,7 +2,7 @@
 require_once('menu.php');
 require_once('data.php');
 
-$menuName = $_GET['name'];
+$menuName = $_GET['name'];//ここできたnameを次に代入し、menuのアクションに送る
 $menu = Menu::findByName($menus, $menuName);
 $menuReviews = $menu->getReviews($reviews);
 ?>
