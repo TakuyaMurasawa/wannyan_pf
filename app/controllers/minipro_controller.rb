@@ -1,0 +1,2 @@
+class MiniproController < ApplicationController
+end
