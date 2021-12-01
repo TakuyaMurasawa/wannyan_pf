@@ -1,0 +1,2 @@
+class Minipro < ApplicationRecord
+end
