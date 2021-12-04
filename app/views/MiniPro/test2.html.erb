@@ -22,3 +22,35 @@ class Main {
 	}
 
 }
+
+
+class Main {
+	public static void main(String[] args) {
+		//	【問題】それぞれの虫がさなぎになるかどうか表示されるプログラムを作成してみましょう。
+
+		//	String型の変数「insect」に調べたい昆虫の名前を用意しました。
+		String insect = "チョウ";
+
+		//	選択肢の昆虫がそれぞれ昆虫になるかどうかを表示します。
+		//	以下のif文を正しく埋めて「insect」にどの昆虫が格納されているか確かめましょう。
+		//	(例)文字列「チョウ」と比較
+		if(insect.equals("チョウ")) {
+			//	チョウはさなぎになるので「サナギになる」と表示しました。
+			System.out.println("サナギになる");
+		}else if(insect.equals("トンボ")) {
+			//	このelse ifでは文字列「トンボ」と比較してみましょう。
+			//	トンボはさなぎにならないので「サナギにならない」と表示しました。
+			System.out.println("サナギにならない");
+
+			//★	同様に「カマキリ」「クワガタ」とも比較できるように、else if文を追加してみましょう。
+			//		else if文は「カマキリ」「クワガタ」の二つの文字列を変数「insect」と比較し、
+			//		それぞれ「サナギにならない」「サナギになる」の文字列を出力してみましょう。
+		}else if(insect.equals("カマキリ")){
+		    System.out.println("サナギにならない");
+		}else if(insect.equals("クワガタ")){
+		    System.out.println("サナギになる");
+		}
+
+		//	実行したら、insectを「トンボ」「カマキリ」「クワガタ」に変更してみましょう。
+	}
+}
