@@ -17,3 +17,34 @@ class Main {
 	}
 
 }
+
+class Main {
+
+	public static void main(String[] args) {
+		//  【問題】while文の処理を修正して、処理の無限ループにならないようにしましょう。
+
+		//  int型の変数「sokudo」は、箱の移動速度です。
+		int sokudo = 10;
+
+		//  int型の変数「gensoku」は、箱と床の摩擦による減速です。
+		int gensoku = 2;
+
+		//  while文では条件式がTrueである間は処理を繰り返します。
+		while(sokudo > 0) {
+
+			//  一回一回の処理ごとに箱の速度を表示します。
+			System.out.println("箱は速度" + sokudo + "で移動しています。");
+
+			//★摩擦による箱の移動速度の減速処理を追加しましょう。
+			//  移動速度「sokudo」から摩擦による減速「gensoku」を引きましょう。
+			//	ただし、複合代入演算子を使用してみましょう。★
+                sokudo -= gensoku;
+
+		}
+
+		// while文終了後に表示します。
+		System.out.println("箱は停止しました。");
+
+	}
+
+}
