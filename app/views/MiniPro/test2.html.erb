@@ -54,3 +54,107 @@ class Main {
 		//	実行したら、insectを「トンボ」「カマキリ」「クワガタ」に変更してみましょう。
 	}
 }
+
+
+class Main {
+
+	public static void main(String[] args) {
+		// 【問題】指定された変数を宣言、初期化し、
+		//         正しく計算式が表示されるようにしましょう。
+
+
+		//★float型の変数「x1」を宣言し、「2.8」で初期化しましょう。★
+        float x1 = 2.8f;
+
+		//★float型の変数「y1」を宣言し、「3.4」で初期化しましょう。★
+        float y1 = 3.4f;
+
+		//★double型の変数「xy1」を宣言し、
+		// 「x1」掛ける「y1」の結果で初期化しましょう。★
+        double xy1 = x1 * y1;
+
+		//  xy1に格納される値は浮動小数点型の仕様で小数第3位以降まで
+		//  存在しているため、xy1の値を小数第3位で四捨五入します。
+		xy1 = ((double)Math.round(xy1 * 100)) / 100;
+
+		//  計算結果を表示します。
+		System.out.println(x1 + " × " + y1 + " = " + xy1);
+
+
+		//★double型の変数「x2」を宣言し、「6,3」で初期化しましょう。★
+        double x2 = 6.3;
+
+		//★double型の変数「y2」を宣言し、「4.5」で初期化しましょう。★
+        double y2 = 4.5;
+
+		//★float型の変数「xy2」を宣言し、
+		// 「x2」掛ける「y2」の結果で初期化しましょう。
+		// 「x2」「y2」はそれぞれfloat型にキャストしましょう。★
+       float xy2 = (float)x2 * (float)y2;
+
+		//	xy2に格納される値は浮動小数点型の仕様で小数第3位以降まで
+		//  存在しているため、xy2の値を小数第3位で四捨五入します。
+		xy2 = ((float)Math.round(xy2 * 100)) / 100;
+
+		//  計算結果を表示します。
+		System.out.println(x2 + " × " + y2 + " = " + xy2);
+
+
+		//★double型の変数「x3」を宣言し、「3.6」で初期化しましょう。★
+        double x3 = 3.6;
+
+		//★float型の変数「y3」を宣言し、「8.2」で初期化しましょう。★
+        float y3 = 8.2f;
+
+		//★float型の変数「xy3」を宣言し、
+		// 「x3」掛ける「y3」の結果で初期化しましょう。
+		// 「x3」はfloat型にキャストしましょう。★
+        float xy3 = (float)x3 * y3;
+
+		//  xy3に格納される値は浮動小数点型の仕様で小数第3位以降まで              //2.8 × 3.4 = 9.52
+                                                                               6.3 × 4.5 = 28.35
+                                                                               3.6 × 8.2 = 29.52
+		//  存在しているため、xy3の値を小数第3位で四捨五入します。
+		xy3 = ((float)Math.round(xy3 * 100)) / 100;
+
+		//  計算結果を表示します。
+		System.out.println(x3 + " × " + y3 + " = " + xy3);
+
+	}
+
+}
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+		//	【問題】String型とchar型の違いを意識して、正しく変数を代入してみましょう。    //char型の場合シングルクオテーション''で囲まなければならない
+
+		//★String型の変数strBox1を宣言して、「"リンゴ"、46、'A'」の中から適した値を代入してみましょう★
+        String strBox1 = "リンゴ";
+		//変数「strBox1」を表示します。
+		System.out.println(strBox1);
+
+		//★char型の変数charBox1を宣言して、「'B'、"バナナ"、58」の中から適した値を代入してみましょう★
+        char charBox1 = 'B';
+		//変数「charBox1」を表示します。
+		System.out.println(charBox1);
+
+		//★String型の変数strBox2を宣言して、「"蜜柑"、'C'、3.14」の中から適した値を代入してみましょう★
+        String strBox2 = "蜜柑";
+		//変数「strBox2」を表示します。
+		System.out.println(strBox2);
+
+		//★String型の変数strBox3を宣言して、「100、55.5、"ブドウ"」の中から適した値を代入してみましょう★
+         String strBox3 = "ブドウ";
+		//変数「strBox3」を表示します。
+		System.out.println(strBox3);
+
+		//★char型の変数charBox2を宣言して、「true、"あ"、'E'」の中から適した値を代入してみましょう★
+        char charBox2 = 'あ';
+		//変数「charBox2」を表示します。
+		System.out.println(charBox2);
+	}
+
+}
