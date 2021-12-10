@@ -60,13 +60,14 @@ class Main {
 
 	public static void main(String[] args) {
 		// 【問題】指定された変数を宣言、初期化し、
-		//         正しく計算式が表示されるようにしましょう。
-
+		//         正しく計算式が表示されるようにしましょう。　　　　　　　　　　　　　　　　//float型に関して
+		　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　・double型より少ない量の小数の際に利用
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　・代入する少数の最後にF　or fをつけなければならない
 
 		//★float型の変数「x1」を宣言し、「2.8」で初期化しましょう。★
-        float x1 = 2.8f;
-
-		//★float型の変数「y1」を宣言し、「3.4」で初期化しましょう。★
+        float x1 = 2.8f;                                                                 //double型に関して
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　・float型より大きい量の小数の際に利用
+		//★float型の変数「y1」を宣言し、「3.4」で初期化しましょう。★　　                      ・代入する少数の最後にD or dをつけなければならない
         float y1 = 3.4f;
 
 		//★double型の変数「xy1」を宣言し、
@@ -75,13 +76,13 @@ class Main {
 
 		//  xy1に格納される値は浮動小数点型の仕様で小数第3位以降まで
 		//  存在しているため、xy1の値を小数第3位で四捨五入します。
-		xy1 = ((double)Math.round(xy1 * 100)) / 100;
-
-		//  計算結果を表示します。
-		System.out.println(x1 + " × " + y1 + " = " + xy1);
-
-
-		//★double型の変数「x2」を宣言し、「6,3」で初期化しましょう。★
+		xy1 = ((double)Math.round(xy1 * 100)) / 100;                                       //Math.roundメソッドに関して
+　　　　　　　　　　　　　　　　　                                                        .小数点以下を四捨五入する
+		//  計算結果を表示します。　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+		System.out.println(x1 + " × " + y1 + " = " + xy1);　　　　　　　　　　　　　　　　//Math.ceil
+                                                                                          .小数点以下を切り上げ
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　//Math.floor
+		//★double型の変数「x2」を宣言し、「6,3」で初期化しましょう。★                          小数点以下を切り捨て
         double x2 = 6.3;
 
 		//★double型の変数「y2」を宣言し、「4.5」で初期化しましょう。★
@@ -158,3 +159,413 @@ class Main {
 	}
 
 }
+
+
+class Main {
+	public static void main(String[] args) {
+
+		//	【問題】十二支それぞれの動物を使うことわざを表示させてみましょう。
+
+		//	char型の変数「japaneseZodiac」に'子'を格納しました。
+		char japaneseZodiac = '子';
+
+		//	switch文を利用して、それぞれの干支に対応することわざを表示させてみましょう。
+		//★以下のswitch文の対象文字列に「japaneseZodiac」を指定してみましょう。
+		switch	(japaneseZodiac) {
+			//	（例）「子」の場合
+			case '子':
+				System.out.println("窮鼠猫を噛む");
+				break;
+			//★	上記の例を参考に、他の十二支についてもcaseを追加してみましょう。
+			//	なお対応する干支とことわざは以下の通りです。
+			//	巳:蛇に睨まれた蛙
+			//	午:馬の耳に念仏"
+			//	未:屠所の羊
+			//	申:猿に烏帽子
+			//	酉:鶏群の一鶴
+			//	戌:負け犬の遠吠え"
+			//	亥:遼東の豕
+			//	（例）「丑」の場合
+			case '丑':
+				System.out.println("九牛の一毛");
+				break;
+			//	（例）「寅」の場合
+			case '寅':
+				System.out.println("虎の威を借る狐");
+				break;
+			//	（例）「卯」の場合
+			case '卯':
+				System.out.println("兎の上り坂");
+				break;
+			//	（例）「辰」の場合
+			case '辰':
+				System.out.println("画竜点睛を欠く");
+				break;
+				case '巳':
+				System.out.println("蛇に睨まれた蛙");
+				break;
+				case '午':
+				System.out.println("馬の耳に念仏");
+				break;
+				case '未':
+				System.out.println("屠所の羊");
+				break;
+				case '申':
+				System.out.println("猿に烏帽子");
+				break;
+				case '酉':
+				System.out.println("鶏群の一鶴");
+				break;
+				case '戌':
+				System.out.println("負け犬の遠吠え");
+				break;
+				case '亥':
+				System.out.println("遼東の豕");
+				break;	
+		}
+
+		//	実行して確認したら、「japaneseZodiac」に他の十二支の動物に変えてみましょう。
+		//
+	}
+}
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//割り切れる数があるかどうかを示す、boolean型の変数resultを宣言しました。
+		//初期値にtrueを与えます。
+		boolean result = true;
+		//int型の変数nを13で初期化します。
+		int n = 13;
+
+		//【問題】与えられた数nを2～n-1までfor文で割って、
+		//素数であるかどうかを判定し、結果を表示してみましょう。
+
+		//for文で割り切れる数があるかどうか調べます。
+		for(int i = 2; i <= n-1; i++) {
+			//★数値nをiで割った余りをint型の変数remainderに代入しましょう。★
+            int remainder = n / i;
+
+			//「割り切れる数がある(＝素数でない)」時にresultの値を変えます。
+			if(remainder == 0) {
+				//★変数resultにfalseを代入しましょう。★
+                    result = false;
+				//★ループ処理を抜けましょう。★
+                    break;
+			}
+		}
+		//resultのtrueかfalseによって出力結果を分けます。
+		if(result == true) {
+			//resultの値がtrueの時、「素数です」と表示しました。
+			System.out.println( "素数です");
+		//★素数でない場合の分岐を加えましょう。★
+		}else{
+			//★「素数ではありません」と表示しましょう。★
+            System.out.println( "素数ではありません");
+		}
+	}
+}
+
+
+
+class Main {
+	public static void main(String[] args) {
+		//	【問題】配列から適切な文字を取り出し、文字列を結合して四字熟語を表示してみましょう。
+
+		//	結果の文字列を格納するString型の変数「result」を用意しました。
+		String result = "";
+
+		//★候補の文字を要素に持つ配列「moji」を用意しましょう。
+		//	格納する漢字：商・力・命・懸・尽・生・一・明（順番を入れ替えないでください。)★
+		String[] moji = {"商","力","命","懸","尽","生","一","明"};
+
+		//★「result」に配列「moji」から”一”を取り出し、結合して格納してみましょう。★
+        result += moji[6];
+
+		//★「result」に配列「moji」から”生”を取り出し、結合して格納してみましょう。★
+        result += moji[5];
+
+		//★「result」に配列「moji」から”懸”を取り出し、結合して格納してみましょう。★
+        result += moji[3];
+
+		//★「result」に配列「moji」から”命”を取り出し、結合して格納してみましょう。★
+        result += moji[2];
+
+		//	結果を出力します。
+		System.out.println(result);       //一生懸命
+	}
+}
+
+class Main {
+	public static void main(String[] args) {
+
+		//	【問題】画面では女海賊の指示によって旗の上げ下げを行いました。
+		//	今回は女海賊の指示を配列に用意することで、再現してみましょう。
+
+		//	海賊の指示を配列「pirate」で用意します。
+		int[] pirate = {1,0,-2,2,3,1,2,3,0,-3};
+
+		//	あなたの答えを配列「flag」で用意します。
+		int[] flag = {1,1,-1,1,2,3,4,5,3,4};
+
+		//	旗の正解の位置を格納しておく変数「answer」を用意しました。
+		int answer = 0;
+
+		//	プログラムでは最大で10回繰り返したときの結果を表示します。
+		//	以下のfor文を正しく埋めてみましょう。ただし、カウンタ変数をi、初期値を0とします。
+		for(int i=0;i<10;i++) {
+
+			//★「answer」に「pirate」のi番目の要素を足して問題の答えを求めてみましょう。
+			//	ただし、複合代入演算子を使用してみましょう。
+			answer += pirate[i];
+
+			//	海賊の指示を表示します。
+			System.out.println("海賊の指示：" + pirate[i]);
+
+			//	あなたの答えを表示します。
+			System.out.println("あなたの答え：" + flag[i]);
+
+			//★間違えたら「ゲームオーバー」と表示し、ゲームを終了します。
+			//	以下のif文を「「flag」のi番目の要素と「answer」が等しくない場合」、となるように埋めてみましょう。
+			if(flag[i] != answer) {
+				//	等しくないので「ゲームオーバー」と表示します。
+				System.out.println("ゲームオーバー");
+				
+				break;
+
+				//★for文を抜け出す処理を描いてみましょう。
+
+			}
+		}
+		//	実行して確認したら「flag」の要素を変更して、break文が実行される位置を再度確認してみましょう。
+	}
+}                                                                     
+海賊の指示：1
+あなたの答え：1
+海賊の指示：0
+あなたの答え：1
+海賊の指示：-2
+あなたの答え：-1
+海賊の指示：2
+あなたの答え：1
+海賊の指示：3
+あなたの答え：2
+ゲームオーバー
+
+
+class Main {
+	public static void main(String[] args) {                                                                       
+		//	【問題】配列に都道府県名を格納し、順番に表示するプログラムを作成してみましょう。
+
+		//★配列「prefectures」を宣言し、都道府県名を格納してみましょう★ 
+		//ただし、格納する順は「青森、岩手、宮城、秋田、山形、福島」とします。
+        String[] prefectures = {"青森","岩手","宮城","秋田","山形","福島"};
+		//	for文を利用して配列の中身を表示します。
+		//	★配列の長さの分だけ繰り返すように、以下のfor文を埋めてみましょう。★
+		//	ただし、カウンタ変数をi、初期値を0とし、lengthを利用してみましょう。
+		for(int i=0;i<prefectures.length;i++) {　　　　　　　★
+			//	画面のように１～６までの番号を表示します。
+			//★表示する都道府県名が配列の何番目の要素かを表示するように以下の空欄を埋めてみましょう。★
+			System.out.println((i+1)+ "番目");
+
+			//★配列のi番目の要素を表示するように空欄を埋めてみましょう。★
+			System.out.println(prefectures[i]);
+		}
+	}
+}
+1番目青森  2番目岩手  3番目宮城  4番目秋田  5番目山形  6番目福島 ///この後★の部分をi"<=prefectures.length;"にすると七番目が出る　　7番目空欄
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】各調理器具の一杯の量を正しく選択できているかをelse ifで判定し、
+		//出力するプログラムを完成させましょう。
+
+		//String型の配列amountの要素を各調理器具の名前の
+		//"小さじ1, 大さじ1", "1カップ", "1合枡"とします。
+		String[] amount = {"小さじ1", "大さじ1", "1カップ", "1合枡"};
+
+		//for文とif文を用いて配列amountに格納されている値を判定します。
+		for(int i = 0; i < amount.length;i++) {
+
+			//amount[i]の値が"大さじ1"だった場合、"大さじ1は15ccです。"と表示させます。
+			if(amount[i].equals("大さじ1")) {
+				System.out.println("大さじ1は15ccです。");
+
+			//★else if を用いてamount[i]の値が"1合枡"だった場合、"1合枡は180ccです。"と表示させましょう。★
+			} else if(amount[i].equals("1合枡")) {
+				System.out.println("1合枡は180ccです。");
+
+			//★else if を用いてamount[i]の値が"1カップ"だった場合、"1カップは200ccです。"と表示させましょう。★
+			} else if(amount[i].equals("1カップ")) {
+				System.out.println("1カップは200ccです。");
+
+			//★else if を用いてamount[i]の値が"小さじ1"だった場合、"小さじ1は5ccです。"と表示させましょう。★
+			}else if(amount[i].equals("小さじ1")) {
+                System.out.println("小さじ1は5ccです。");
+			}
+
+		}
+
+	}
+
+}
+
+
+class Main {
+
+	public static void main(String[] args) {
+		// 【問題】全3問の3択クイズの解答を2次元配列に格納しましょう。
+
+
+		//★String型の2次元配列「kaitou」を、要素数3×3で宣言しましょう。★
+        String[][] kaitou ={
+        {"","",""},
+        {"","",""},
+        {"","",""}
+        };
+        
+        =String[][] kaitou = new String[3][3];
+
+		//  「kaitou」に指定された内容を格納しましょう。
+		//  2次元配列への値の格納方法は複数ありますが、
+		//  今回は以下の例にならって格納してみましょう。
+		//
+		// 【問題例】
+		//  kaitou[0][0～2]に1問目の解答を格納します。
+		//  1問目は選択肢の2番が正解です。
+		// 【解答例】
+		//  kaitou[0][0] = "×";
+		//  kaitou[0][1] = "○";
+		//  kaitou[0][2] = "×";
+
+		//★kaitou[0][0～2]に1問目の解答を格納しましょう。
+		//  1問目は選択肢の1番が正解です。★
+        kaitou[0][0] = "○";
+        kaitou[0][1] = "×";
+        kaitou[0][2] = "×";
+
+
+
+		//★kaitou[1][0～2]に2問目の解答を格納しましょう。
+		//  2問目は選択肢の2番が正解です。★
+        kaitou[1][0] = "×";
+        kaitou[1][1] = "○";
+        kaitou[1][2] = "×";
+
+
+
+		//★kaitou[2][0～2]に3問目の解答を格納しましょう。
+		//  3問目は選択肢の3番が正解です。★
+        kaitou[2][0] = "×";
+        kaitou[2][1] = "×";
+        kaitou[2][2] = "○";
+
+
+
+
+		//★格納した値をfor文を使用してすべて表示してみましょう。
+		//  「kaitou」の1次元目の要素数繰り返すようにしましょう。ただし、lengthを使用してみましょう。★
+		for(int i = 0; i <kaitou.length; i++) {　　　　　　　　　//i行の数（行数）をカウントする
+
+			//  問題番号を表示します。
+			System.out.print("【" + (i + 1) + "問目】");
+
+			//★「kaitou」の2次元目の要素数繰り返すようにしましょう。ただし、lengthを使用してみましょう。★
+			for(int j = 0; j < kaitou[i].length; j++) {             //各i行の中の要素の数をカウントする
+
+				//  選択肢を表示します。
+				System.out.print("選択肢" + (j + 1) + "：");
+
+				//★「kaitou」のインデックス番号が1次元目が「i」、2次元目が「j」
+				//  の位置にある値を表示しましょう★
+				System.out.print(kaitou[i][j]);
+
+				// 半角スペースです。
+				System.out.print(" ");
+
+			}
+			//  問題番号ごとに改行します。
+			System.out.println();
+
+		}
+
+	}
+
+}
+/////【1問目】選択肢1：○ 選択肢2：× 選択肢3：×  【2問目】選択肢1：× 選択肢2：○ 選択肢3：×  【3問目】選択肢1：× 選択肢2：× 選択肢3：○
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】九九を格納した二次元配列を作成して、任意の数値が九九の答えに存在するかどうか
+		//を出力するプログラムを完成させましょう。
+
+		//int型の変数numに探したい答えを与えて初期化します。
+		int num = 81;
+		//文字列resultに"存在しない"と文字列を与えて初期化します。
+		String result = "存在しない";
+
+		// ★int型で9×9の要素数を持つ二次元配列kukuを宣言しましょう。★
+		int[][] kuku = new int[9][9];
+
+	    // ★for文をネストして九九の結果を配列に格納し、二次元配列を作成しましょう。
+	    //一つ目のカウンタにはiを使って0から9未満の時、二つ目のカウンタにはjを使用して0から9未満の時、
+	    //また、インクリメント演算子を使ってfor文の条件を指定しましょう。★
+	    for(int i=0;i<9;i++) {
+	      for(int j=0;j<9;j++){
+	    	  //二次元配列kukuに九九の答えを格納します。
+	    	  kuku[i][j] = (i + 1) * (j + 1);
+	      }
+	    }
+
+	    //for文を利用して、numの値が存在するかどうか調べます。
+	    for(int i = 0; i < 9; i++) {
+	    	for(int j = 0; j < 9; j++) {
+	    		//掛け算の結果と、変数numの値が一致した場合に変数resultの値を"存在する"に書き換えます。
+	    		if(kuku[i][j] == num) {
+	    			result = "存在する";
+	    		}
+	    	}
+	    }
+	    //★print文で変数resultを出力してみましょう。★
+        System.out.println(result);
+	}
+
+}
+
+
+
+
+class Main {
+	public static void main(String[] args) {
+
+		//	【問題】３つの事象が同時に起きる確率を求めてみましょう。
+
+		//★今回は使用する三つの事象を、「じゃんけんで勝つ確率」「アイスが当たる確率」「サイコロで１が出る確率」とします。
+		//	それぞれの確率を用意します。ただし、確率をfloat型で扱うために分母をfloat型にキャストしましょう。★
+		float janken = 1/(float)3;
+		float ice = 1/(float)10;
+		float dice = 1/(float)6;
+
+		//★画面では結果の確率を分数で表示しましたが、今回は整数の百分率（％）で表してみます。
+		//	まず、３つの事象が起きる確率を求めてみましょう。確率はjanken、ice、diceをかけることで求められます。★
+		float probability = janken * ice * dice;
+
+		//★「probability」を百分率に直してみましょう。
+		//	百分率に直すには、求めた確率に×100をします。★　　　　　　　　//キャストに関して
+		probability = probability * 100;　　　　　　　　　　　　　　　　　　　　大きいデータ型のものを小さなデータ型のものに無理やり代入する
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　小さな変数=(小さな変数の型)大きな変数
+		//	求めた確率を表示します。
+		System.out.println(probability + "%");
+	}
+}
+
+
