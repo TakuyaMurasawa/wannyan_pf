@@ -57,3 +57,88 @@ class Main {
         System.out.println("「閲」の部首は「もんがまえ」です。");
     }
 }
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】絵の具の色を表すメソッドを作成して、メソッドを呼び出し、呼び出したメソッド内で
+		//引数colorに与えた色と混ぜた色を表示するプログラムを完成させましょう。
+
+		//Stringクラスの変数colorに文字列"red"を格納して初期化します。
+		String color = "red";
+		//★メソッドblueに引数colorを与えて呼び出しましょう。★
+
+	}
+
+	//メソッドblueを定義します。引数にはString型のcolorを受け取ります。
+	public static void blue (String color) {
+
+		//メソッド内では引数で受け取った文字列colorの値によってif文を使い処理を分岐させます。
+		//引数の値colorが"red"だった場合
+		if(color.equals("red")) {
+			//青と赤を混ぜた色"紫"を出力します。
+			System.out.println("紫");
+		//引数の値colorが"white"だった場合
+		}else if (color.equals("white")) {
+			//青と白を混ぜた色"水色"を出力します。
+			System.out.println("水色");
+		//引数の値colorが"yellow"だった場合
+		}else if (color.equals("yellow")) {
+			//青と黄色を混ぜた色"緑"を出力します。
+			System.out.println("緑");
+		}
+	}
+
+
+	//★メソッドredを定義してみましょう。引数にはString型のcolorを受け取るようにしましょう。★
+	   public static void red(String color) {
+		//引数の値colorが"blue"だった場合の処理を記述します。
+		if(color.equals("blue")) {
+			//赤と青を混ぜた色"紫"を出力します。
+			System.out.println("紫");
+		//★引数の値colorが"white"だった場合の処理を記述してみましょう。★
+		}else if(color.equals("white")) {
+			//赤と白を混ぜた色"ピンク"を出力します。
+			System.out.println("ピンク");
+		//引数の値colorが"yellow"だった場合
+		}else if (color.equals("yellow")) {
+			//★赤と黄色を混ぜた色"オレンジ"を出力してみましょう。★
+            System.out.println("オレンジ");
+		}
+	}
+
+	//★メソッドwhiteを定義してみましょう。引数にはString型のcolorを受け取るようにしましょう。★
+	   public static void white(String color) {
+		//★引数の値colorが"red"だった場合の処理を記述してみましょう。★
+		if(color.equals("red")) {
+			//★白と赤を混ぜた色"ピンク"を出力してみましょう。★
+
+		//★引数の値colorが"blue"だった場合の処理を記述してみましょう。★
+		}else if(color.equals("blue")) {
+			//白と青を混ぜた色"水色"を出力します。
+			System.out.println("水色");
+		//引数の値colorが"yellow"だった場合"クリーム色"を出力します。
+		}else if (color.equals("yellow")) {
+			System.out.println("クリーム色");
+		}
+	}
+
+
+	//★メソッドyellowを定義してみましょう。引数にはString型のcolorを受け取るようにしましょう。★
+	   public static void yellow(String color) {
+		//引数の値colorが"red"だった場合、"オレンジ"を出力します。
+		if(color.equals("red")) {
+			System.out.println("オレンジ");
+		//引数の値colorが"blue"だった場合、"緑"を出力します。
+		}else if (color.equals("blue")) {
+			System.out.println("緑");
+		//引数の値colorが"white"だった場合、"クリーム色"を出力します。
+		}else if (color.equals("white")) {
+			System.out.println("クリーム色");
+		}
+	}
+
+	//実行して確認したら呼び出すメソッドや引数に与える値を変更して再度実行してみましょう。
+}
