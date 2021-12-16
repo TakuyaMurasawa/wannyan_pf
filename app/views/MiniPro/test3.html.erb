@@ -167,3 +167,56 @@ class Main {
 	}
 
 }
+
+
+class Main {
+
+	public static void main(String[] args) {
+		//  ◇boolean型のtrue/falseを電気を通す/通さないに見立てて使用してみましょう。
+
+		// 【問題】電気を「通す」をtrue、「通さない」をfalseとして
+		//		  if文の判定に使用してみましょう。
+
+		//  ガラスコップ(電気：通さない)
+		//★boolean型の変数「glass」を宣言し、falseで初期化しましょう。★
+        boolean glass = false;
+
+		//  鉄パイプ(電気：通す)
+		//★ boolean型の変数「pipe」を宣言し、trueで初期化しましょう。★
+        boolean pipe = true;
+
+		//  金ダライ(電気：通す)
+		//★boolean型の変数「washtub」を宣言し、trueで初期化しましょう。★
+        boolean washub = true;
+
+		//  木(電気：通さない)
+		//★boolean型の変数「tree」を宣言し、falseで初期化しましょう。★
+        boolean tree = false;
+
+		//  電気を流した結果を表示します。
+		//★メソッドの引数に「glass」を渡し、Electrifyメソッドを実行して、戻り値を表示してみましょう。★
+		System.out.println(Electrify(glass));
+
+	}
+
+	//引数に格納した物体に電気を通し、結果を返すメソッド「Tuden」
+	static String Electrify(boolean object) {
+
+		//  returnする結果を格納するString型の変数「result」です。
+		String result = "";
+
+		//★if文の条件に引数の値を指定し、
+		//  trueの時に「電気が流れました」が、
+		//  falseの時に「電気は流れませんでした」が
+		//  resultに格納されるようにしましょう。★
+		if(object == true) {
+			result = "電気が流れました";
+		}else {
+			result = "電気は流れませんでした";
+		}
+
+		//  結果の文字列を呼び出しもとに返します。
+		return result;
+	}
+
+}
