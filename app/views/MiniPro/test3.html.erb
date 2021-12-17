@@ -220,3 +220,30 @@ class Main {
 	}
 
 }
+
+
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+		// 【問題】時計の針が指し示す位置をもとに、その時計が
+		//        「何時何分」を表しているのかを表示するメソッドを作成してみましょう。
+
+		//int型の変数「hour」を宣言し、3を初期値として持たせます。
+		int hour = 3;
+
+		//int型の変数「minute」を宣言し、0を初期値として持たせます。
+		int minute = 0;
+
+		//★メソッド「time」に引数として「hour」「minute」を渡して実行してみましょう★
+        time(hour, minute);
+	}
+
+	//★引数にint型の変数「hour」「minute」を持つ戻り値無しのメソッド「time」を作成してみましょう。★
+	public static void time(int hour, int minute) {
+		System.out.println(hour + "時" + minute + "分");
+	}
+
+}
