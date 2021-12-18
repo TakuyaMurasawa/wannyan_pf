@@ -247,3 +247,27 @@ class Main {
 	}
 
 }
+
+
+
+class Main {
+	//	【問題】フィールドに光合成に必要な要素を用意し、メソッドを利用して表示してみましょう。
+
+	//★光合成に必要な要素３つをString型のフィールド h2o,sun,co2 として宣言しましょう。★
+	//	ただし、それぞれ順に「水」「日光」「二酸化炭素」とします。
+	static String h2o = "水";                                           //事前情報として宣言しておくことにより、その後の出力の際に
+	static String sun = "日光";　　　　　　　　　　　　　　　　　　　　　　いちいち再度引数を設定する必要がなくなるため楽になる
+	static String co2 = "二酸化炭素";
+
+	public static void main(String[] args) {
+
+		//★メソッド「kougousei」を呼び出し、戻り値を表示するように空欄を埋めてみましょう。
+		System.out.println(kougousei());
+	}
+
+	public static String kougousei() {
+
+		//★宣言されたフィールドを使用して、「光合成に必要な要素」を説明する戻り値を設定しましょう。★
+		return "光合成には、" +h2o + sun +co2+  " が必要です。";
+	}
+}
