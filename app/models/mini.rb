@@ -1,0 +1,2 @@
+class Mini < ApplicationRecord
+end
