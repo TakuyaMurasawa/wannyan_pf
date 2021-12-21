@@ -336,3 +336,270 @@ class Main {
 		//実行して結果を確認したら、呼び出すメソッドを追加・削除して再度実行してみましょう。
 	}
 }
+
+
+
+class Main {
+	public static void main(String[] args) {
+		// 【問題】カブトムシのオスとメスの特徴を、それぞれ片方ずつ
+		//         フィールドに持つクラス「Kabutomusi1」「Kabutomusi2」から、
+		//         特徴を取得してif文の判定に使用し、「オス」と表示しましょう。
+
+		//★オスの特徴をフィールドに持つクラスのインスタンスを作成しましょう。
+		//  またインスタンス化する際の変数名は、対象のクラス名の1文字目を
+		//  小文字に変更したものにしましょう。(例：ClassName → className)★
+		//	※
+            Kabutomusi1 kabutomusi1 = new Kabutomusi1();
+		//★String型の変数「tuno」を宣言し、インスタンス化した
+		//  クラスのフィールド「tuno」の値で初期化しましょう。★
+		//	※
+		String tuno = kabutomusi1.tuno;
+
+		//★下記のif文を修正し、「tuno」が「あり」であれば「オス」を表示し、
+		//  「tuno」が「なし」であれば「メス」を表示するようにしましょう。★
+		if(tuno == "あり") {
+			//  オスの特徴と一致すれば「オス」を表示
+			System.out.println("オス");
+
+		}else if(tuno == "なし") {
+			//  メスの特徴と一致すれば「メス」を表示
+			System.out.println("メス");
+
+		}
+
+		//★実行して結果を確認したら、※をメスの特徴を持つクラスに入れ替えて「メス」と表示されることを確認しましょう。★
+
+	}
+}
+
+
+class Kabutomusi1 {
+
+	//  特徴：角あり
+	String tuno = "あり";
+
+}
+
+class Kabutomusi2 {
+
+	//  特徴：角なし
+	String tuno = "なし";
+
+}
+
+
+
+import java.util.Random;                                                                       //https://techacademy.jp/magazine/17733
+                                                                                               よくある例
+                                                                                                  Random random = new Random();
+class Main {                                                                                      int randomValue = random.nextInt(100);
+	public static void main(String[] args) {
+
+		//	【問題】ランダムに発生させた10個の数字の平均を求めてみましょう。
+
+		//	合計値を格納するためのint型の変数「sum」を用意しました。
+		int sum = 0;
+
+		//	ランダムで発生させた数値を格納するための配列「num」を用意しました。
+		int[] num = new int[10];
+
+		//	Randomクラスをインスタンス化します。
+		Random random = new Random();
+
+		//★for文で10回繰り返し、ランダムで発生させた数値を配列「num」の要素として格納しましょう。
+		//	以下のfor文を正しく埋めてみましょう。ただし、カウンタ変数をi、初期値は0としましょう。
+		for(int i = 0;i < 10;i++) {
+			//★配列「num」のi番目の要素に、ランダムで発生させた数値を格納しましょう。
+			//	ただし、発生させる数値は1～100までの整数とします。
+			num[i] = random.nextInt(100);                          // num[1~10]の中,に0以上、100未満の乱数を得ます。
+
+			//	発生させた数値を表示しました。
+			System.out.print(num[i] + " ");
+		}
+
+		//★配列の長さ分for文を繰り返し、合計を求めてみましょう。
+		//	以下のfor文を正しく埋めてみましょう。ただし、カウンタ変数をi、初期値は0とし、lengthを使ってみましょう。
+		for(int i = 0;i <num.length;i++) {
+			//★「sum」に配列「num」のi番目の要素を足して代入しましょう。
+             sum += num[i];
+		}
+
+		System.out.print("平均値は");
+
+		//★平均値が表示されるように、以下のprint文に数式を組み込みましょう。
+		//	ただし、配列の長さを求めるlengthを使用してみましょう。
+		System.out.println(sum/10);
+	}
+}
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//フィールドに「鶴と亀の合計数」int型の変数totalを宣言し15で初期化しました。
+		int total = 15;
+		//フィールドに「合計の足の数」int型の変数legTotalを宣言し44で初期化しました。
+		int legTotal = 44;
+
+		//【問題】鶴亀算の解き方を求めるクラスのインスタンス化を行い、
+		//フィールドに設定した値から鶴と亀の数を表示させましょう。
+
+
+		//★全て鶴の場合を計算する"Crane"クラスをインスタンス化しましょう。
+		//ただし、インスタンス名を"cra"とします。★
+        Crane cra = new Crane();
+		//★インスタンス化したcraからメソッドcraneにtotalとlegTotalを渡して呼び出し、
+		//int型の変数shortageに代入しましょう。★
+		int shortage = cra.crane(total,legTotal);
+
+		//★鶴と亀の数を求めるクラス"CraneTurtle"クラスをインスタンス化しましょう。
+		//ただし、インスタンス名をturとします。★
+        CraneTurtle tur = new CraneTurtle();
+		//★インスタンス化したturからメソッドcraneTurtleに、shortageとtotalを渡して呼び出しましょう。★
+        tur.craneTurtle(shortage,total);
+	}
+}
+
+	//全部鶴の場合を求めるクラス
+	class Crane {
+		//引数に、鶴と亀の数と、鶴と亀合計の足の数を渡して、
+		//足りない足の数を求めます。
+		public int crane(int total, int legtotal) {
+
+			//鶴の足の数(2本)をかけて足の本数を求めます。
+			int craneLeg = total * 2;
+			//引数「鶴と亀合計の足の数」から上で求めた足の数を引いて差分を求めます。
+			int difference = legtotal - craneLeg;
+			//足りない足の本数を表示します。
+			System.out.println("足りない足は " + difference + " 本");
+			return difference;
+		}
+	}
+
+	//鶴と亀の数を求めるクラス
+	class CraneTurtle {
+		public void craneTurtle(int shortageleg, int total) {
+			//亀の数を求めます。
+			int turtle = shortageleg / 2;
+			//引数の「鶴と亀の合計数」から求めた亀の数を引いて、鶴の数を求めます。
+			int crane = total - turtle;
+
+			//★print文に変数を追加し、鶴の数を表示しましょう。★
+			System.out.println("鶴の数は " +crane );
+			//★print文に変数を追加し、亀の数を表示しましょう。★
+			System.out.println("亀の数は " + turtle );
+		}
+	}
+
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】髪と下敷きをこすり合わせた回数によって、
+		//下敷きをはなした時の髪の浮き上がりの程度を変化させるプログラムを作成しましょう。
+
+		//int型の変数countに「こする」ボタンをクリックした回数を入れて初期化します。
+		int count = 30;
+
+		//★クラスHairをインスタンス化してみましょう。
+		//ただし、インスタンス名はhairとします。★
+        Hair hair = new Hair();
+
+		//★変数countを引数に与えて、changeメソッドを呼び出してみましょう。★
+        hair.change(count);
+
+		//呼び出して、表示される結果を確認した後、変数countに入れる数値を変更して再度実行してみましょう。
+	}
+}
+
+//髪の変化の程度を表すクラスHair
+class Hair {
+	//引数にint型の変数countを受け取るメソッドchangeを作成しました。
+	void change (int count) {
+
+		//if文でcountの値が10未満の時の条件分岐を指定します。
+		if(count < 10) {
+			//countが10未満の時は"髪は浮き上がらない"と出力します。
+			System.out.println("髪は浮き上がらない");
+
+		//★else ifを使ってcountの値が30未満の時の条件分岐を指定してみましょう。★
+		}else if(count < 30) {
+			//countが30未満の時は"髪が少し浮き上がる"と出力します。
+			System.out.println("髪が少し浮き上がる");
+
+		//countの値が30以上の時
+		} else {
+			//★countが30以上の時に"髪が全て浮き上がる"と出力してみましょう。★
+            System.out.println("髪が全て浮き上がる");
+
+		}
+	}
+}
+
+
+
+
+class Main {
+	public static void main(String[] args) {
+
+		//	【問題】「SV」を表示する親クラスと、それを継承する各文型を表示する子クラスを用意して、表示してみましょう。
+
+		//	今回、文型を調べる文を「This is a pen.」とします。
+
+		//	上記の文は「SVC」という構造です。
+		//★「C」と表示するメソッドを持つクラスをインスタンス化しましょう。
+		//	ただし、インスタンス名はクラス名をクラス名を小文字にしたものにしましょう。(例：クラスSVならsv）★
+        C c = new C();
+        OC oc = new OC();
+		//★インスタンス化したクラス内のメソッドを使って、文の構造を表示してみましょう。★
+        c.svc();
+        oc.svoc();
+	}
+}
+
+//	「SV」と表示するメソッドを持つクラスSVを作ります。
+class SV {
+	public void sv() {
+		System.out.print("SV");
+	}
+}
+
+//	クラスSVを継承したクラスCを作成しました。
+class C extends SV{
+	public void svc(){
+		//	親クラスのsvメソッドを利用し「SVC」と表示します。
+		sv();
+		System.out.println("C");
+	}
+}
+
+//★クラスSVを継承したクラスOを作成してみましょう。★
+class O extends SV {
+	public void svo() {
+		sv();
+		System.out.println("O");
+	}
+}
+
+//★クラスSVを継承したクラスOOを作成しました。★
+class OO extends SV{
+	public void svoo() {
+		//★親クラスのsvメソッドを利用して「SVOO」と表示させてみましょう。★
+        sv();
+		System.out.println("");
+	}
+}
+
+//★クラスSVを継承したクラスOCを作成してみましょう。★
+class OC extends SV{
+	public void svoc() {
+		//★親クラスのsvメソッドを利用して「SVOC」と表示させてみましょう。★
+        sv();
+		System.out.println("OC");
+	}
+}
