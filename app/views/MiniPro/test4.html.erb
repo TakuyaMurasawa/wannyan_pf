@@ -1,0 +1,40 @@
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】引数がfloat2つのメソッドwaterVaporと同じ名前で引数なしのメソッドwaterVaporを用意して、
+		//「1m³の空気に含まれる水蒸気の質量」と、「その空気の温度の飽和水蒸気量」の値から
+		//湿度を求めて表示するプログラムを完成させましょう。
+
+		//★mainメソッド内でwaterVaporを呼び出してみましょう。★
+		waterVapor();
+
+	}
+
+	//メソッドwaterVaporを作成します。
+	//★一つ目の引数には「1m³の空気に含まれる水蒸気の質量」を表すfloat型の変数c,
+	//二つ目の引数には「その空気の温度の飽和水蒸気量」を表すfloat型の変数dを与えてみましょう。★
+	static void waterVapor (float c, float d) {
+
+		//"1m³の空気に含まれる水蒸気の質量は c "と出力します。
+		System.out.println("1m³の空気に含まれる水蒸気の質量は " + c );
+		//★"その空気の温度の飽和水蒸気量は d "と出力してみましょう。★
+        System.out.println("その空気の温度の飽和水蒸気量は"+ d );
+		//★湿度を求める公式に変数cと変数dを当てはめて、
+		//"c / d * 100"の結果が空欄部分に出力されるように記述してみましょう。★
+        System.out.println("湿度"+ c / d *100 + "%");
+
+	}
+
+	//★引数なしのメソッドwaterVaporを作成してみましょう。★
+	static void waterVapor () {
+
+		//float型の変数cは5.0で初期化します。
+		float c = 5.0F;
+		//★float型の変数dを10.0で初期化してみましょう。★
+        float d = 10.0f;
+		//★変数c,dを引数として、waterVaporを呼び出してみましょう。★
+        waterVapor(c,d);
+	}
+
+}
