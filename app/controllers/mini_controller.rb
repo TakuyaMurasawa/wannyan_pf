@@ -1,0 +1,2 @@
+class MiniController < ApplicationController
+end
