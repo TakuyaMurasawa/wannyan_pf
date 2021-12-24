@@ -38,3 +38,24 @@ class Main {
 	}
 
 }
+
+
+
+class Main{
+	public static void main(String[] args) {
+		//【問題】掛け算の穴埋めの答えを求めるコンストラクタを持つクラスを作成し、インスタンス化してみましょう。
+
+		//★「Keisan」クラスをインスタンス化してみましょう。ただし、インスタンス名を「keisan」とし、引数には「8,16」を与えます。★
+        Keisan keisan = new Keisan();
+        keisan.Keisan(8,16);
+	}
+}
+
+
+class Keisan{
+	//★引数にint型の変数「x」「y」を持つコンストラクタを作成してみましょう。★
+	static void Keisan(int x,int y){
+		//穴埋めの答えを求めて表示します。
+		System.out.println(x * y);
+	}
+}
