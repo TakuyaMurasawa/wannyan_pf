@@ -46,16 +46,79 @@ class Main{
 		//【問題】掛け算の穴埋めの答えを求めるコンストラクタを持つクラスを作成し、インスタンス化してみましょう。
 
 		//★「Keisan」クラスをインスタンス化してみましょう。ただし、インスタンス名を「keisan」とし、引数には「8,16」を与えます。★
-        Keisan keisan = new Keisan();
-        keisan.Keisan(8,16);
+		
+        Keisan keisan = new Keisan(8,16);　　　　　　　　//メソッドを選択せず、クラスを選択し引数だけ与える
 	}
 }
 
 
 class Keisan{
 	//★引数にint型の変数「x」「y」を持つコンストラクタを作成してみましょう。★
-	static void Keisan(int x,int y){
-		//穴埋めの答えを求めて表示します。
-		System.out.println(x * y);
+	Keisan(int x, int y){                                            //コンストラクタとは
+		//穴埋めの答えを求めて表示します。　　　　　　　　　　　　　　　　クラスを引っ張ってきた際に、自動的に起動する手法
+		System.out.println(y / x);　　　　　　　　　　　　　　　　　　　　X public static void Keisan は違います
+	}　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　Keisan(){
+	                                                                                System.out.println("");    
+}                                                                                   }      これが正解
+
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+		//【問題】枕詞を指定し、そのことばから導かれる語をコンストラクタ内の処理で
+		//出力するプログラムを作成しましょう。
+
+		//枕詞「ちはやふる」から導かれる語を表示するコンストラクタを持つ
+		//クラスChihayafuruをインスタンス化します。
+		Chihayafuru obj = new Chihayafuru();
+
+		//インスタンス化時にコンストラクタが実行され、コンストラクタ内の処理(出力)が
+		//実行されていることを確認したら、別のクラスをインスタンス化して
+		//コンストラクタが実行されていることを再度確認してみましょう。
+
+	}
+
+}
+//枕詞「ひさかたの」から導かれる語を表示するコンストラクタを持つ
+//クラスHisakatanoを作成しました。
+class Hisakatano {
+	//コンストラクタHisakatanoを作成しました。
+	//コンストラクタはクラス名と同名にします。
+	Hisakatano() {
+		//枕詞から導かれる語を出力しました。
+		System.out.println("ひさかたの->'光'");
+	}
+}
+
+//★枕詞「あしひきの」から導かれる語を表示するコンストラクタを持つ
+//クラスAshihikinoを作成してみましょう。★
+class Ashihikino{
+	//コンストラクタAshihikinoを作成しました。
+	//コンストラクタはクラス名と同名にします。
+	Ashihikino() {
+		//枕詞から導かれる語を出力しました。
+		System.out.println("あしひきの->'山'");
+	}
+}
+
+//枕詞「くさまくら」から導かれる語を表示するコンストラクタを持つ
+//クラスKusamakuraを作成しました。
+class Kusamakura {
+	//★コンストラクタKusamakuraを作成してみましょう。★
+	Kusamakura() {
+		//枕詞から導かれる語を出力しました。
+		System.out.println("くさまくら->'旅'");
+	}
+}
+
+//★枕詞「ちはやふる」から導かれる語を表示するコンストラクタを持つ
+//クラスChihayafuruを作成してみましょう。★
+class Chihayafuru {
+	//★コンストラクタChihayafuruを作成してみましょう。★
+	 Chihayafuru() {
+		//枕詞から導かれる語を出力しました。
+		System.out.println("ちはやふる->'神'");
 	}
 }
