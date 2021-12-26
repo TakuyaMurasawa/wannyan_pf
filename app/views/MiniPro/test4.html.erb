@@ -122,3 +122,59 @@ class Chihayafuru {
 		System.out.println("ちはやふる->'神'");
 	}
 }
+
+
+
+コンストラクタとオーバーロード
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】直角三角形の内角を求めるプログラムを完成させましょう。
+
+
+		//クラスTriangleを引数に90以下の任意の数値を与えてインスタンス名triでインスタンス化します。
+		Triangle tri = new Triangle(20);
+		//メソッドangleを実行します。
+		tri.angle();
+	}
+}
+//intのフィールドを3つ持つクラスTriangleを作成します。
+class Triangle {
+
+	//フィールドに変数名はx、y、zを作成します。
+	int x;
+	int y;
+	int z;
+
+	//★intの引数を一つ持つコンストラクタ(Aと呼ぶ)を作成してみましょう。★
+	public Triangle(int a) {   //int a = 20
+		//引数二つのコンストラクタ(Bと呼ぶ)を呼び出します。
+		//呼び出したコンストラクタBの引数に、引数として受け取った値aと、90度からaを引いた数を与えます。
+		this(a, (90 - a) );        (20, 70)                                                                     //this()とは
+		                                                                                                  java内でオーバーロードした別のコンストラクタを
+	}                                                                                                     呼び出すことができる。
+                                                                                                          その際はオーバーロード同様、引数を変更して
+	//★intの引数を二つ持つコンストラクタ(Bと呼ぶ)を作成してみましょう。★                                呼び出すコンストラクタを指定する
+	public Triangle(int a,int b) {   //int a = 20, int b = 70
+		//★引数三つのコンストラクタ(Cと呼ぶ)を呼び出してみましょう。
+		//引数にはa,b,90を与えましょう。★
+        this(a,b,90);
+	}
+
+	//intの引数を三つ持つコンストラクタ(C)を作成します。
+	public Triangle(int a, int b, int c) {   //int a = 20, int b = 70, int c = 90
+
+		//★引数として受け取ったa,b,cの値をそれぞれフィールドのx,y,zに設定してみましょう。★
+         x = a;
+         y = b;
+         z = c;
+
+	}
+	//メソッドangleを作成します。
+	void angle () {
+		//フィールドのx,y,zの値を参照し、それぞれの角の大きさを出力します。
+		System.out.println("角xは" + x + "°、角yは" + y + "°、角zは" + z + "°");
+	}
+}
