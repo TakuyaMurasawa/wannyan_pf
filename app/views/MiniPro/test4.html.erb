@@ -178,3 +178,439 @@ class Triangle {
 		System.out.println("角xは" + x + "°、角yは" + y + "°、角zは" + z + "°");
 	}
 }
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】カエルの成長過程を例として、
+		//卵のクラスFrogspawnを継承して、オタマジャクシのクラスTadpole
+		//オタマジャクシのクラスTadpoleを継承してクラスFrogを作成しましょう。
+
+		//作成したのちにクラスFrogのメソッドの実行と、フィールドの表示をしてみます。
+		Frog obj = new Frog();
+		obj.jump();
+		System.out.println(obj.hands);
+
+	}
+}
+//卵のクラスFrogspawnを作成します。
+class Frogspawn {
+}
+//★クラスFrogspawnを継承したオタマジャクシを表すクラスTadpoleを作成してみましょう。★
+class Tadpole extends Frogspawn{
+	//フィールドtailを宣言します。
+	String tail;
+	//メソッドswimを作成します。
+	void swim () {
+		System.out.println("swim");
+	}
+}
+
+//★Tadpoleを継承したクラスFrogを作成してみましょう。★
+class Frog extends Tadpole{
+	//フィールドfeetを宣言します。
+	String feet;
+	//★文字列のフィールドhandsを"hands"で初期化しましょう。★
+    String hands;
+
+	//メソッドjumpを作成します。
+	void jump () {
+		System.out.println("jump!");
+	}
+}
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】整数クラス、有限小数クラス、循環小数クラスを作成して、
+		//指定の通りにアクセスレベルを指定してみましょう。
+
+		//IntegralNumberクラスをインスタンス化して、フィールドの変数aを出力します。
+		IntegralNumber obj1 = new IntegralNumber();
+		System.out.println(obj1.a);
+
+		//FiniteDecimalクラスをインスタンス化して、フィールドの変数bを出力します。
+		FiniteDecimal obj2 = new FiniteDecimal();
+		System.out.println(obj2.b);
+
+		//CirculatingDecimalクラスをインスタンス化して、フィールドの変数dと
+		//継承元のFiniteDecimalクラスの変数cを出力します。
+		CirculatingDecimal obj3 = new CirculatingDecimal();
+		obj3.accessC();
+
+		//変数dのアクセスレベル修飾子はmainメソッドから直接アクセスすることができません。
+		//そのためgetterであるgetDを介して出力します。
+		System.out.println(obj3.getD());
+
+	}
+}
+
+//クラスIntegralNumberを作成します。
+class 	IntegralNumber {
+	//★int型の変数aに「すべてのクラスからアクセスできる」ようにアクセスレベル修飾子を付与しましょう。★
+	   public int a = 13;
+}
+
+//クラスFiniteDecimalを作成します。
+class FiniteDecimal {
+	//double型の変数bにはアクセスレベル修飾子を指定しません。
+	double b = 0.5;
+	//★変数cに「同一クラス、同一パッケージ、現在のクラスを継承するサブクラス内からアクセス可」
+	//となるようにアクセスレベル修飾子を付与してみましょう。★
+	protected double c = 1.8;
+
+}
+
+//FiniteDecimalを継承した、クラスCirculatingDecimalを作成します。
+class CirculatingDecimal extends FiniteDecimal {
+	//★double型の変数dに「同一クラス内のみアクセス可」となるようにアクセスレベル修飾子を付与しましょう。★
+	   private double d = 0.3333;
+
+	//継承元であるFiniteDecimalクラス内の変数cを表示するメソッドaccessCを作成しました。
+	void accessC () {
+		//FiniteDecimalをインスタンス化して、変数cを出力します。
+		FiniteDecimal obj = new FiniteDecimal();
+		System.out.println(obj.c);
+	}
+
+	//変数dはアクセスレベル修飾子にprivateが指定されているため、getterを作成して変数にアクセスします。
+	public double getD() {
+		return d;
+	}
+
+}
+
+
+
+オーバーロード
+　　　ー親クラスで設定されていたメソッドやフィールドを継承先の子クラスで上書きする事
+　　　
+class Main {
+
+	public static void main(String[] args) {
+		//【問題】「買う」「見る」「行く」のうち、任意の動詞を与え
+		//クラスPresentとPastをインスタンス化してメソッドを実行し、
+		//英語の現在形と過去形を出力するプログラムを作成しましょう。
+
+
+		//Stringクラスの変数inputを、「買う」「見る」「行く」のうち任意の動詞で初期化します。
+		String input = "買う";
+
+		//現在形を表示するクラスPresentをインスタンス化します。
+		//ただし、インスタンス名をpreとします。
+		Present pre = new Present();
+		//★引数にinputを与えてenglishメソッドを呼び出しましょう。★
+        pre.english(input);
+
+		//★Presetクラスを継承したPastクラスをインスタンス名pastとしてインスタンス化して、
+		//メソッドenglishの引数にinputを与えてを呼び出し、過去形を表示しましょう。★
+        Past past = new Past();
+        past.english(input);
+
+	}
+
+}
+
+//現在形を呼び出すParesentクラス
+class Present {
+
+	//englishメソッドにStringの引数strを与えます。
+	void english (String str) {
+
+		//引数の値が「買う」だった場合の条件を指定します。
+		if(str.equals("買う")) {
+			//「買う」の現在形"buy"を出力します。
+			System.out.println("buy");
+
+		//引数の値が「見る」だった場合の条件を指定します。
+		} else if (str.equals("見る")) {
+			//「見る」の現在形"see"を出力します。
+			System.out.println("see");
+
+		//★引数の値が「行く」だった場合の条件を指定してみましょう。★
+		}else if(str.equals("行く")) {
+			//★「行く」の現在形"go"を出力してみましょう。★
+            System.out.println("go");
+
+		}
+	}
+}
+
+//次に、過去形を表示するPastクラスを作成します。
+//★Presentクラスを継承したPastクラスを作成してみましょう★
+    class Past extends Present{
+
+	//englishメソッドにStringの引数strを与えます。
+	void english (String str) {
+
+		//引数の値が「買う」だった場合の条件を指定します。
+		if(str.equals("買う")) {
+			//「買う」の過去形"bought"を出力します。
+			System.out.println("bought");
+
+		//★引数の値が「見る」だった場合の条件を指定してみましょう。★
+		}else if(str.equals("見る")) {
+			//「見る」の過去形"saw"を出力します。
+			System.out.println("saw");
+
+		//引数の値が「行く」だった場合の条件を指定します。
+		} else if (str.equals("行く")) {
+			//★「行く」の過去形"went"を出力してみましょう。★
+            System.out.println("went");
+
+		}
+	}
+}
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】ことばの昔の意味を表示するメソッドを持ったクラスを作成し、
+		//そのクラスを継承した子クラスでメソッドをオーバーライドし、現在の意味に書き換えるプログラムを完成させましょう。
+
+
+		//クラスPastとクラスPresentをインスタンス化して、メソッドを実行してみます。
+		Past past = new Past();
+		past.arigatou();
+
+		Present present = new Present();
+		present.arigatou();
+
+		//実行して結果を確認したら、別のメソッドも実行してみましょう。
+	}
+}
+
+//昔の言葉の意味を表示するクラスPastを作成します。
+class Past {
+	//"ありがとう"の昔の意味を表示するメソッドを作成します。
+	void arigatou() {
+		System.out.println("存在するのがまれである");
+	}
+	//"貴様"の昔の意味を表示するメソッドを作成します。
+	void kisama() {
+		System.out.println("尊く身分が高い人を表す呼称");
+	}
+	//★"守る"の昔の意味を表示するメソッドmamoruを作成してみましょう。
+	//昔の意味"じっと見る"を出力してみましょう。★
+	void mamoru() {
+        System.out.println("じっと見る");
+	}
+}
+
+//★クラスPastを継承したクラスPresentを作成してみましょう。★
+class Present extends Past{
+	//クラスPastのメソッドarigatouをオーバーライドして、
+	//"ありがとう"の今の意味を表示するように書き換えます。
+	void arigatou() {
+		System.out.println("感謝の意味");
+	}
+	//★クラスPastのメソッドkisamaをオーバーライドして、
+	//"貴様"の今の意味を表示するように書き換えてみましょう。
+	//今の意味は"相手を侮辱する呼称"です。★
+	void kisama() {
+        System.out.println("相手を侮辱する呼称");
+	}
+
+	//★クラスPastのメソッドmamoruをオーバーライドして、
+	//"守る"の今の意味を表示するように書き換えてみましょう。
+	//今の意味は"保護する"です。★
+	void mamoru() {
+        System.out.println("保護する");
+	}
+}
+
+
+抽象クラス
+　ー継承した子クラスに対して、必ず書くメソッドを定義する絶対命令書（クラス）
+　
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】抽象クラスCalに抽象メソッドareaCalを作成して、
+		//それを継承した長方形、三角形、円の面積計算するクラス内でメソッドを実装してみましょう。
+
+		//実行時に引数として与えるint型の変数xを作成し、任意の値で初期化します。
+		int x = 4;
+
+		//長方形の面積を計算するクラスRectangleをインスタンス化して
+		//areaCalメソッドを実行し6×xを計算します。
+		Rectangle obj = new Rectangle();
+		obj.areaCal(x);
+
+		//実行して結果を確認したら、他のクラスをインスタンス化してメソッドを実行してみましょう。
+	}
+}
+
+
+
+
+//★抽象クラスCalを作成してみましょう。★abstract class A      abstract メソッド名(引数ありなし)
+
+abstract class Cal{
+	//★抽象メソッドareaCalを作成してみましょう。
+	//引数にはint型の変数xを与えましょう。★
+	abstract void areaCal(int x);
+}
+
+
+
+
+
+//クラスCalを継承した長方形の面積を求めるクラスRectangleを作成します。
+class Rectangle extends Cal{
+	//メソッドareaCalを実装します。
+	void areaCal(int x) {
+		//縦を6、横をxとして面積を計算します。結果はint型の変数resに格納します。
+		int res = 6 * x;
+		//結果を出力します。
+		System.out.println(res);
+	}
+}
+
+//★クラスCalを継承した三角形の面積を求めるクラスTriangleを作成してみましょう。★
+class Triangle extends Cal{
+	//★メソッドareaCalを実装してみましょう。★
+	void areaCal(int x) {
+		//底辺が5の場合の高さをxとして面積を計算します。結果はint型の変数resに格納します。
+		int res = 5 * x / 2;
+		//結果を出力します。
+		System.out.println(res);
+	}
+}
+
+//★クラスCalを継承した円の面積を求めるクラスCircleを作成してみましょう。★
+class Circle extends Cal{
+	//★メソッドareaCalを実装してみましょう。★
+	void areaCal(int x) {
+		//円周率を3、半径をxとして面積を計算します。
+		int res = x * x * 3;
+		//結果を出力してみましょう。
+		System.out.println(res);
+	}
+}
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】抽象クラスFigureを継承して、具象クラスTrapezoid, Diamond, Fanを作成し、
+		//それぞれのクラスで抽象メソッドformulaを実装して、実行するプログラムを完成させましょう。
+
+
+		//作成した具象クラスFanをインスタンス化し、メソッドareaとformulaを実行します。
+		Fan obj = new Fan();
+		obj.area();
+		obj.formula();
+
+		//実行して結果を確認したら、他のクラスをインスタンス化してメソッドを実行してみましょう。
+	}
+}
+
+//★抽象メソッドformulaと、具象メソッドareaを持つ抽象クラスFigureを作成してみましょう。★
+abstract class Figure{
+	//★抽象メソッドformulaを作成してみましょう。★
+    abstract void formula();
+
+	//メソッドareaの処理は「面積を求める公式です。」と出力します。
+	void area() {
+		System.out.println("面積を求める公式です。");
+	}
+}
+
+//★Figureを継承した具象クラスTrapezoidを作成してみましょう。★
+class Trapezoid extends Figure{
+
+	//★メソッドformulaを「(上底+下底)×高さ/2」と出力するように実装してみましょう。★
+    void formula(){
+        System.out.println("上底+下底)×高さ/2");
+    }
+}
+
+//★Figureを継承した具象クラスDiamondを作成してみましょう。★
+class Diamond extends Figure{
+
+	//formulaの処理を「対角線×対角線/2」と出力するようにします。
+	void formula () {
+		System.out.println("対角線×対角線/2");
+	}
+}
+
+//★Figureを継承した具象クラスFanを作成してみましょう。★                                 出力内容
+class Fan extends Figure{                                                               面積を求める公式です。
+                                                                                        半径 × 半径 × π / 360
+
+	//formulaの処理を「半径 × 半径 × π / 360 」と出力するようにする。　　　　　　　　　　　★上記より子クラスにないメソッドでも、親クラスにあれば子クラスの
+	void formula () {　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　インスタンスメソッドの処理から出力できる
+		System.out.println("半径 × 半径 × π / 360 ");　　　　　　　　　　　　　　　　　　　　
+		　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　Fan obj = new Fan();
+		　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　obj.area();
+		　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　obj.formula();
+	}
+}
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】顕微鏡の部位の名前のインターフェースを実装し、何ができるか出力するプログラムを完成させましょう。
+
+		//インターフェイスを実装したクラスMicroscopeをインスタンス化し、全てのメソッドを実行してみましょう。
+		Microscope ms = new Microscope();
+		ms.turnRevolver();
+		ms.turnScrew();
+		ms.changeAngle();
+
+	}
+}
+
+//メソッドturnRevolverを持つインターフェースRevolverを作成します。
+interface Revolver {
+	public abstract void turnRevolver ();
+}
+//★メソッドturnScrewを持つインターフェースScrewを作成してみましょう。★
+interface Screw{
+    public void turnScrew();
+}
+
+//★メソッドchangeAngleを持つインターフェースReflectorを作成してみましょう。★
+interface Reflector{
+    public void changeAngle();
+}
+
+
+//★三つのインターフェースを実装したクラスMicroscopeを作成しましょう。★
+class Microscope implements Revolver,Screw,Reflector{
+	//★メソッドturnRevolverを「対物レンズの倍率を変えます。」と出力するように実装しましょう。★
+    public void turnRevolver(){
+        System.out.println("対物レンズの倍率を変えます。");
+    }
+
+
+	//★メソッドturnScrewを「プレパラートと対物レンズの距離を変えてピントを合わせます。」と出力するように実装しましょう。★
+    public void turnScrew(){
+        System.out.println("プレパラートと対物レンズの距離を変えてピントを合わせます。");
+    }
+
+
+
+	//★メソッドchangeAngleを「光を反射させて視野を明るくします。」と出力するように実装しましょう。★
+    public void changeAngle(){
+        System.out.println("光を反射させて視野を明るくします。");
+    }
+
+
+}
