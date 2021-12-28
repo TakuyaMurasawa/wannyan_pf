@@ -1,0 +1,34 @@
+final
+ -変数、メソッド、クラスの前につけることにより、後に値の変換や継承をできないように出来る
+　　ーfinal double tax = 0.1   ---X--->  tax = 0.5
+　　
+    -final void attak(){                                       void attak(){
+             System.out.println("手で攻撃する");   ---X--->            System.out.println("手で攻撃する");
+　　　　　　　　　　　　}                                                        }
+　　　　　　　　　　　　
+　　-final class oya {                                          class oya extends kodomo{
+　　                                              ---X--->
+　　             }                                                                   }
+class Main{
+    public static void main(String[] args){
+        //【問題】円の面積を求めるプログラムを作成してみましょう。
+
+        //★円周率を持たせるfinal修飾子を付けたdouble型の変数「pi」を初期値3.14で宣言してみましょう。★
+        final double pi = 3.14;
+
+        //円の半径を持たせるdouble型の変数「radius」を初期値5で宣言します。
+        double radius = 5;
+
+        //円の面積を持たせるdouble型の変数「area」を初期値０で宣言してみましょう。
+        double area = 0;
+
+        //★円の面積を「pi」「radius」を用いて求めて変数「area」に代入してみましょう。
+        //ただし、円の面積は半径×半径×円周率で求められます。★
+        area = radius * radius * pi;
+
+        //円の面積を表示します。
+        System.out.println(area);
+
+        //実行して確認したら、radiusの値を0~10までの間で変更して試してみましょう。
+    }
+}
