@@ -32,3 +32,35 @@ class Main{
         //実行して確認したら、radiusの値を0~10までの間で変更して試してみましょう。
     }
 }
+
+
+
+static 
+
+
+class Main {
+	public static void main(String[] args) {
+		//【問題】以下のプログラムが正しく実行されるようにstaticを付けてみましょう。
+
+		//String型の変数「answer」を宣言し、双子葉類を初期値として与えます。
+		String answer = "双子葉類";
+
+		//「Result」クラスをインスタンス化します。ただし、インスタンス名を「result」とします。
+		Result result = new Result();
+
+		//今回はアサガオの問題を想定してみます。
+		//★「answer」が双子葉類と等しいかを判別できるように以下のif文を埋めてみましょう★
+		if(answer.equals("双子葉類")) {
+			System.out.println(Result.correct);
+		}else {
+			System.out.println(result.incorrect);
+		}
+
+	}
+}
+
+class Result {
+	//★mainメソッドが正しく実行されるように、「correct」「incorrect」どちらか一方にだけstaticを書き加えてみましょう。
+	static String correct = "正解";
+	String incorrect = "不正解";
+}
