@@ -64,3 +64,43 @@ class Result {
 	static String correct = "正解";
 	String incorrect = "不正解";
 }
+
+
+
+try~catch　　　　　　　　　　　　　　　　　　　　　　　　　 通常な処理を行っている途中で➀(今回の場合は繰り返し文の場合)　
+基本構文  try{                                              例外な処理が起きた場合本来であればエラーが起きてしまうが
+            int kotae = a / b;　　　　　　　　　　　　　　　事前にこのエラーが起きた時➁はこの処理をするとしておけば
+             }catch(0で割ってしまうという例外){➁　　　　　　 エラーが起きた時システムエラーでなく、その処理の内容➂を実行することができる
+               System.out.println("0では割れません");➂
+                  }
+
+class Main {
+	public static void main(String[] args) {
+		//	【問題】解答を配列に格納し、表示させようとしたときに発生する可能性のある例外を考えてみましょう。
+
+		//	問題数を表すint型の変数「question」を宣言し、4を代入します。
+		int question = 4;
+
+		//	問題の解答をString型の配列「answer」に代入します。
+		//	ただし、今回は例外を確認するため最初の三問のみ格納します。
+		String[] answer = {"太宰治","谷崎潤一郎","川端康成"};
+
+		//	例外が発生する可能性がある処理を行います。
+		try {
+
+			//★問題数分処理を繰り返すように以下のfor文を正しく埋めてみましょう。
+			//	ただし、カウンタ変数をiとし、初期値を0、変数「question」より小さいとします。★
+			for(int i = 0;i<question;i++) {
+
+				//	配列「answer」からインデックス番号がiの要素を表示します。
+				System.out.println(answer[i]);
+			}
+			//★この処理では、配列の要素数より多く繰り返しているため
+			//「ArrayIndexOutOfBoundsException」という例外が発生します。
+			//キャッチできるように以下の空欄を埋めてみましょう
+			//ただし引数は「eとします」★
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("例外が発生しました。");
+		}
+	}
+}
