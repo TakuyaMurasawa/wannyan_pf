@@ -86,21 +86,73 @@ class Main {
 		String[] answer = {"太宰治","谷崎潤一郎","川端康成"};
 
 		//	例外が発生する可能性がある処理を行います。
-		try {
-
-			//★問題数分処理を繰り返すように以下のfor文を正しく埋めてみましょう。
-			//	ただし、カウンタ変数をiとし、初期値を0、変数「question」より小さいとします。★
-			for(int i = 0;i<question;i++) {
-
-				//	配列「answer」からインデックス番号がiの要素を表示します。
-				System.out.println(answer[i]);
-			}
+		try {                                                                                  -----
+                                                                                                    |
+			//★問題数分処理を繰り返すように以下のfor文を正しく埋めてみましょう。                   | 
+			//	ただし、カウンタ変数をiとし、初期値を0、変数「question」より小さいとします。★      |
+			for(int i = 0;i<question;i++) {                                                         |  ➀
+                                                                                                    |
+				//	配列「answer」からインデックス番号がiの要素を表示します。                       |
+				System.out.println(answer[i]);                                                      |
+			}                                                                                  -----
 			//★この処理では、配列の要素数より多く繰り返しているため
 			//「ArrayIndexOutOfBoundsException」という例外が発生します。
 			//キャッチできるように以下の空欄を埋めてみましょう
 			//ただし引数は「eとします」★
-		}catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("例外が発生しました。");
+		}catch(ArrayIndexOutOfBoundsException e) {    ➁
+			System.out.println("例外が発生しました。");      ➂
 		}
+	}
+}
+
+
+class Main {
+	public static void main(String[] args) {
+		//	【問題】足し算・引き算・掛け算・割り算がそれぞれ０で実行できるか確認してみましょう。
+		//			例で与えられた足し算と同じように、他の演算についても記述してみましょう。
+
+		int i = 3;
+		int result = 0;
+
+		//	例）足し算
+		try {
+			//iと0を足し算して式と結果を出力しましょう。
+			System.out.print(i + "+0=");
+			result = i + 0;
+			System.out.println(result);
+		}catch(Exception e){
+			//例外をキャッチした時は「実行できません」を表示しましょう。
+			System.out.println("実行できません");
+		}
+
+		//	上記の例を参考に、他の演算についても記述してみましょう。
+		//	コメント部分は書かなくてよいです。
+		//★①引き算★
+        try {
+			System.out.print(i + "-0=");
+			result = i - 0;
+			System.out.println(result);
+		}catch(Exception e){
+			System.out.println("実行できません");
+		}
+
+		//★②掛け算★
+        try {
+			System.out.print(i + "*0=");
+			result = i * 0;
+			System.out.println(result);
+		}catch(Exception e){
+			System.out.println("実行できません");
+		}
+
+		//★③割り算★
+        try {
+			System.out.print(i + "/0=");
+			result = i / 0;
+			System.out.println(result);
+		}catch(Exception e){
+			System.out.println("実行できません");
+		}
+
 	}
 }
