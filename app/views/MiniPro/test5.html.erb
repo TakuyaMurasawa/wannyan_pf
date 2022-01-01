@@ -156,3 +156,35 @@ class Main {
 
 	}
 }
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】20個の飴を入力された人数で分ける処理を行うとき、
+		//人数に0人が入力された場合に例外処理を行うようプログラムを完成させましょう。
+
+		//入力された人数をint型の変数numに入れて初期化します。
+		int num = 0;
+
+		//0除算が発生する可能性のある処理をtry内に記述します。
+		//★tryで処理を囲ってみましょう。★
+	 try{
+			//int型の変数shoに飴の数20を変数numで割った結果を代入します。
+			int sho = 20 / num;
+			//★int型の変数amariに20を変数numで割った余りを代入してみましょう。★
+            int amari = 20 % num;
+
+			//変数shoとamariを出力します。
+			System.out.println(sho);
+			System.out.println(amari);
+
+		//0除算が行われたときに、例外(ArithmeticException)を受け取り、catch内の処理が実行されます。
+		//★catchを記述してみましょう。★
+		}catch(Exception ex){
+			//例外が発生した場合"0除算です。"を出力します。
+			System.out.println("0除算です。");
+		}
+	}
+}
