@@ -188,3 +188,79 @@ class Main {
 		}
 	}
 }
+
+
+
+起動引数
+
+
+class Main {
+	public static void main(String[] args) {
+		//	【問題】起動引数に指定された月の昔の呼び方と、その由来を表示するプログラムを作成してみましょう。
+
+		//★String型の「month」を宣言し、起動引数の先頭の要素を代入しましょう。★
+		String month = "2";
+
+		//	「month」の値によって実行する処理を変えるためにswitch文を使用します。
+		//★以下の空欄を正しく埋めてみましょう。★
+		switch(month) {
+		//	1の場合
+		case "1":
+			System.out.println("睦月");
+			System.out.println("正月に当たって親しみ睦み合って交誼を暖めるということからきた。");
+			break;
+			//	2の場合
+		case "2":
+			System.out.println("如月");
+			System.out.println("寒くて更にきぬを着る、衣更着（きぬさらぎ）からきたという。");
+			break;
+			//	3の場合
+		case "3":
+			System.out.println("弥生");
+			System.out.println("「草木弥生月」を略した言葉。「弥」は「いよいよ」「ますます」という意味があり、草木がいよいよ生い茂るという意味の「弥生」が変化した呼び名");
+			break;
+			//	4の場合
+		case "4":
+			System.out.println("卯月");
+			System.out.println("ユキノシタ科の落葉低木「ウヅキ」の花である「卯の花」が咲くころの意味");
+			break;
+			//	5の場合
+		case "5":
+			System.out.println("皐月");
+			System.out.println("田植えが始まる時期なので、「早苗を植える月」という意味から「早苗月」と呼ばれ、それが略されて「さつき」になったといわれている");
+			break;
+			//	6の場合
+		case "6":
+			System.out.println("水無月");
+			System.out.println("旧暦では梅雨明けの残暑の頃となり、厳しい日照りが続いて水が枯れる月ということから「水無月」となった。");
+			break;
+			//	７の場合
+		case "7":
+			System.out.println("文月");
+			System.out.println("短冊に歌や字を書く七夕の行事から「文披月（ふみひろげづき）」、稲穂が膨らむ月ということで「ふくみ月」、これらが転じて「文月」になったといわれている。");
+			break;
+        case "8":
+			System.out.println("葉月");
+			System.out.println("葉の落ちる月「葉落月（はおちづき）」が転じて「葉月」。現代感覚では葉が生い茂る様子を思い浮かべるが、旧暦では7月から秋となるため、秋真っ盛りだった。");
+			break;
+		case "9":
+			System.out.println("長月");
+			System.out.println("秋の夜長を意味する「夜長月（よながづき）」の略で「長月」になった。また、秋の長雨の「長雨月（ながめづき）」、稲穂が実る「穂長月（ほながづき）」からという説も。");
+			break;
+		case "10":
+			System.out.println("神無月");
+			System.out.println("神々が出雲の国に行ってしまい留守になるという意の「神なき月」が転訛して「神無月」。神々が集まる出雲の国では、「神在月（かみありつき）」という。");
+			break;
+		case "11":
+			System.out.println("霜月");
+			System.out.println("文字通り霜が降る月という意の「霜降月（しもふりつき）」の略で「霜月」となった。");
+			break;
+		case "12":
+			System.out.println("師走");
+			System.out.println("12月は僧（師）を迎えてお経を読んでもらう月だった。師が馳せる月という意の「師馳す」が転訛し、走るという字があてられるようになった。");
+			break;	
+		}
+
+		//★起動引数に「1」～「12」までの好きな数字を指定して実行してみましょう。★
+	}
+}
