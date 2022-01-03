@@ -264,3 +264,85 @@ class Main {
 		//★起動引数に「1」～「12」までの好きな数字を指定して実行してみましょう。★
 	}
 }
+
+
+
+import java.util.Random;
+
+class Main {
+	public static void main(String[] args) {
+		//	【問題】起動引数に元素名を入れ、ランダムで指定されたものが何に利用されているかを表示するプログラムを句作ってみましょう。
+
+		//	Randomクラスをインスタンス化します。
+		Random random = new Random();
+
+		//	int型の変数「no」にランダムで0~9までを発生させて代入します。
+		//★以下の（）に正しい数値を埋めてみましょう。★
+		int no = random.nextInt(9);
+		//★String型の変数「name」を宣言し、起動引数(no + 1)番目の要素を代入してみましょう。★
+		String name = args[no];
+
+		//	選択された元素を表示します。
+		System.out.println(name);
+
+		//	「name」の値によって、実行する処理を分けるためにswitch文を利用します。
+		//★以下の空欄を正しく埋めてみましょう。★
+		switch(name) {
+		//	水素の場合
+		case "水素":
+			System.out.println("ロケットの発射");
+			break;
+			//	ヘリウムの場合
+		case "ヘリウム":
+			System.out.println("風船");
+			break;
+			//	リチウムの場合
+		case "リチウム":
+			System.out.println("リチウムイオン電池");
+			break;
+			//	ベリリウムの場合
+		case "ベリリウム":
+			System.out.println("強力なばね");
+			break;
+			//	ホウ素の場合
+		case "ホウ素":
+			System.out.println("耐熱ガラス");
+			break;
+			//★以上の例を参考にして、「炭素」「窒素」「酸素」「フッ素」「ネオン」の場合も書いてみましょう。★
+			//	ただしそれぞれの利用例は以下の通りです。
+			//	炭素→鉛筆
+			//	窒素→肥料
+			//	酸素→医療用吸入器
+			//	フッ素→歯のコーティング
+			//	ネオン→ネオンサイン
+		case "炭素":
+			System.out.println("鉛筆");
+			break;
+		case "窒素":
+			System.out.println("肥料");
+			break;
+		case "酸素":
+			System.out.println("医療用吸入器");
+			break;
+		case "フッ素":
+			System.out.println("歯のコーティング");
+			break;
+		case "ネオン":
+			System.out.println("ネオンサイン");
+			break;	
+		}
+		//★起動引数に「水素 ヘリウム リチウム ベリリウム ホウ素 炭素 窒素 酸素 フッ素 ネオン」を指定して実行してみましょう。★
+		
+		args[0] = "水素";
+		args[1] = "ヘリウム";
+		args[2] = "リチウム";
+		args[3] = "ベリリウム";
+		args[4] = "ホウ素";
+		args[5] = "炭素";
+		args[6] = "窒素";
+		args[7] = "酸素";
+		args[8] = "フッ素";
+		args[9] = "ネオン";
+		
+	}
+}
