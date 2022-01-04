@@ -346,3 +346,114 @@ class Main {
 		
 	}
 }
+
+
+
+String class
+
+
+import java.util.Random;
+
+class Main {
+	public static void main(String[] args) {
+		//	【問題】ことわざの前半を格納する配列と、後半を格納する配列をそれぞれ用意しましょう。
+		//	ランダムで要素を一つずつ取り出し、結合して表示してみましょう。
+
+		//前半の配列を作成します。
+		String[] first = {"弘法も","かわいい子には","柳に","火のないところに"};
+
+		//続いて後半の配列を作成しましょう。
+		String[] latter = {"旅をさせよ","筆の誤り","煙は立たぬ","雪折れなし"};
+
+		Random random = new Random();
+
+		//String型の変数「zenhan」にランダムで配列「first」から取り出した要素を格納します。
+		String zenhan = first[random.nextInt(4)];
+
+		//String型の変数「kouhan」にランダムで配列「latter」から取り出した要素を格納します。
+		String kouhan = latter[random.nextInt(4)];
+
+		//★String型の変数「result」に「zenhan」と「kouhan」を接合させて代入しましょう。★
+		String result = zenhan + kouhan;
+
+		//★「result」を表示してみましょう。★
+		System.out.println(result);
+	}
+}
+
+
+
+
+String型変数.length()
+  String型変数内の文字列の数を求めるメソッド(メソッドの為、最後に()を付けなければならない)
+
+class Main {
+	public static void main(String[] args) {
+		//【問題】上五・中七・下五それぞれの文字数を確認し、字余り・字足らずを判定するプログラムを作成してみましょう。
+
+		//	String型の変数「kami」「naka」「simo」にそれぞれ上五・中七・下五の文字列を格納します。
+		String kami = "たびにやんで";
+		String naka = "ゆめはかれのを";
+		String simo = "かけめぐる";
+
+		//「kami」の文字数が5より多い、または「naka」の文字数が7より多い、または「simo」の文字数が5より多いかどうかを判定し
+		//その条件を満たす場合「字余りです」と表示するif文を作成しました。
+		if(kami.length() > 5 || naka.length() > 7 || simo.length() > 5) {
+			System.out.println("字余りです。");
+		}
+
+		//★「kami」の文字数が5より少ない、または「naka」の文字数が7より少ない、または「simo」の文字数が5より少ないかどうかを
+		//判定できるように以下のif文を、上記のif文を参考に埋めてみましょう。★
+		if(kami.length()<5 || naka.length()<7 || simo.length()<5) {
+			System.out.println("字足らずです。");
+		}
+	}
+}
+
+
+
+String型変数.charAt()
+   文字列の中から指定した1文字(char)を抜き出す際に利用
+   順番は配列と同じで0～始まり、文字列の数以上に記載するとエラーになる
+   
+class Main {
+	public static void main(String[] args) {
+		//	【問題】用意した多項式の同類項の数を数えるプログラムを作成してみましょう。
+
+		//	まず、変数「numericalExpression」に多項式を用意しました。
+		String numericalExpression = "x+2+y+3x+5";
+
+		//	「numericalExpression」にxの項が何回出てくるかを数えてみます。
+		//	まず、何回出てきたかカウントするための変数「count」を用意します。
+		int count = 0;
+
+		//	比較するための答え「answer」を用意します。
+		int answer = 2;
+
+		//★for文を「numericalExpression」の文字数分繰り返すように正しく埋めてみましょう。
+		//	ただしカウンタ変数をi、初期値を0として、length()メソッドを利用しましょう。★
+		
+		for(int i = 0;i < numericalExpression.length();i++) 
+		
+			//★charAtメソッドを利用して、i文字目が「x」と一致しているかどうか判断できるように以下のif文を埋めてみましょう。★
+			if(numericalExpression.charAt(i) == 'x') {　　　　　　　　　　　　　　　　　　　　　　　★charなので''シングルクォーテーションで囲む
+			
+				//★一致しているのでインクリメント演算子を利用して、countの値を増やしてみましょう。★
+                   count++;
+			}
+		}
+		
+		
+		//	求めた「count」を表示します。
+		System.out.print(count + "：");
+
+		//★「count」と「answer」が一致しているか判定できるように以下のif文を埋めてみましょう。★
+		if(count == answer) {
+			//	一致しているので「正解」と表示します。
+			System.out.println("正解");
+		}else {
+			//	一致していないので「不正解」と表示します。
+			System.out.println("不正解");
+		}
+	}
+}
