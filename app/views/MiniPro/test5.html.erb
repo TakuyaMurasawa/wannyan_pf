@@ -266,6 +266,7 @@ class Main {
 }
 
 
+??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
 
 import java.util.Random;
 
@@ -280,13 +281,15 @@ class Main {
 		//★以下の（）に正しい数値を埋めてみましょう。★
 		int no = random.nextInt(9);
 		//★String型の変数「name」を宣言し、起動引数(no + 1)番目の要素を代入してみましょう。★
-		String name = args[no];
-
-		//	選択された元素を表示します。
+		String name = args[no];                                                    //やった事
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　283行目にnoを出力し、randamメソッドが起動しているか確認
+		//	選択された元素を表示します。　　　　　　　　　　　　　　　　　　　　　　　　そのため、284行目の代入部分　か　337行目以降のdata部分の不備と想定
 		System.out.println(name);
-
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　284
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 main(args[no]) ereeo
 		//	「name」の値によって、実行する処理を分けるためにswitch文を利用します。
-		//★以下の空欄を正しく埋めてみましょう。★
+		//★以下の空欄を正しく埋めてみましょう。★                                        377
+		                                                                                 String[] args = new String[10];
 		switch(name) {
 		//	水素の場合
 		case "水素":
@@ -347,7 +350,7 @@ class Main {
 	}
 }
 
-
+????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
 
 String class
 
@@ -456,4 +459,295 @@ class Main {
 			System.out.println("不正解");
 		}
 	}
+}
+
+
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】入力された文字からStringクラスのcharAtを使用して文字を抜き出して
+		//結合して単語を作り、一致するかどうか判定するプログラムを完成させましょう。
+
+		//入力された文字列を変数str1,str2,str3,str4とします。
+		String str1 = "ぱんだ";
+		String str2 = "みそしる";
+		String str3 = "がっこう";
+		String str4 = "ざぶとん";
+
+		//上の文字列からcharAtを使ってn番目の文字を抜き出します。
+		//StringクラスのcharAtを利用して0番目のchar値をchar型の変数char1に代入します。
+		char char1 = str1.charAt(0);
+		//★charAtを利用してstr2の1番目の値をchar型の変数char2に代入してみましょう。★
+        char char2 = str2.charAt(1);
+		//★charAtを利用してstr3の2番目の値をchar型の変数char3に代入してみましょう。★
+        char char3 = str3.charAt(2);
+		//★charAtを利用してstr4の3番目の値をchar型の変数char4に代入してみましょう。★
+        char char4 = str4.charAt(3);
+
+		//抜き出した文字列char1からchar4はchar型なので
+		//StringクラスのvalueOfメソッドを使用して文字列型に変換します。       ★String型の変数.valueOf()
+		String str5 = String.valueOf(char1);                                      ()内の数要素を文字列型に変換できる。
+		String str6 = String.valueOf(char2);　　　　　　　　　　　　　　　　　　　今回の場合、charを文字列型に変換
+		String str7 = String.valueOf(char3);
+		String str8 = String.valueOf(char4);
+
+		//文字列str5からstr8を結合してStringの変数resultに代入します。
+		String result = str5 + str6 + str7 + str8;
+
+		//★文字列resultが"ぱそこん"と一致するかどうかをequalメソッドを使って確認してみましょう。★
+		if(result.equals("ぱそこん")) {                                           ???result == "ぱそこん"にすると、そのあとの結果が不正解になるのはなぜ?
+			//文字列が一致したので変数resultと"正解！"を出力します。
+			System.out.println(result);
+			System.out.println("正解！");
+		} else {
+			//文字列が一致しなかったので変数resultと"不正解"を出力します。
+			System.out.println(result);
+			System.out.println("不正解");
+		}
+
+	}
+
+}
+
+
+String型変数.equals()
+
+
+class Main {
+	public static void main(String[] args) {
+
+		//	【問題】左の画面では選んだ合同条件（文字列）から表示する三角形（画像）を変えています。
+		//	このプログラムを文字列を用いて、再現してみましょう。
+		//	ここでは画像は文字列で"imageA", "imageB","imageC"の3つを用意したとします。
+
+		//	表示する画像を表す文字列を格納する変数「image」を用意します。
+		String image = "";
+
+		//	合同条件を格納する変数「congruence」を用意します。
+		String congruence = "";
+
+		//★String型の変数congruenceに合同条件を代入しましょう。
+		//	ただし、合同条件は以下のいずれかを選んで代入してください。
+		//	・3組の辺の長さがそれぞれ等しい
+		//	・2組の辺の長さとその間の角がそれぞれ等しい
+		//	・1組の辺の長さとその両端の角がそれぞれ等しい★
+		congruence = "3組の辺の長さがそれぞれ等しい";
+
+		//	「congruence」に格納されているものを判別して、対応する画像の文字列を表示しましょう。
+		//	なお、対応する合同条件と画像は以下の通りとします。
+		//	「3組の辺の長さがそれぞれ等しい」→「imageA」
+		//	「2組の辺の長さとその間の角がそれぞれ等しい」→「imageB」
+		//	「1組の辺の長さとその両端の角がそれぞれ等しい」→「imageC」
+
+		//★「congruence」が「3組の辺の長さがそれぞれ等しい」と一致しているかどうか判定できるように以下のif文を埋めてみましょう。★
+		if (congruence.equals("3組の辺の長さがそれぞれ等しい")) {
+			//	一致しているので、imageに「imageA」を代入しました。
+		    image = "imageA";
+
+		    //★同様に残りの2つの条件についても判定できるようにelse if文を追加してみましょう。★
+		}else if(congruence.equals("2組の辺の長さとその間の角がそれぞれ等しい")){
+		    image = "imageB";
+		}else if(congruence.equals("1組の辺の長さとその両端の角がそれぞれ等しい")){
+		    image = "imageC";
+		}
+
+		//	表示する画像の文字列を表示します。
+		System.out.println(image);
+
+	}
+}
+
+
+Integer 
+ 数値を扱う参照型（範囲はint型とおなじ）
+ 
+ class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】N(ニュートン)、m(メートル)、j(ジュール)を用いて仕事の大きさを求めプログラムを完成させましょう。
+
+		//初期値600のInteger型の変数gと、初期値1のInteger型の変数mを宣言します。
+        Integer g = 600;
+        Integer m = 1;
+
+		//★Integer型の変数Nに、変数gを100で割った値を入れてみましょう。★
+        Integer N = g / 100;
+
+		//★Integer型の変数jにN*mの値を入れ、jを出力してみましょう。★
+        Integer j = N*m;
+        System.out.println(j);
+
+
+	}
+
+}
+
+
+
+Integr.parseInt(文字列型の変数)
+   文字型の数字の型の一つであるint型に変換できる
+   別の変数に割り当てる際には、その変数のデータ型をint,Integer型で定義する
+   ※「あ」「a」といった文字列型は変換不可
+   
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】江戸時代が始まる年号をparseIntメソッドを使用して
+		//Integer型に変換し、計算して出力するプログラムを作成しましょう。
+
+		//千の位の任意の数値をString型の変数「thousands」に"1"を与えて初期化します。
+		String thousands = "1";
+
+		//百の位の任意の数値をString型の変数「hundreds」に"6"を与えて初期化します。
+		String hundreds = "6";
+
+		//十の位の3つの選択肢のうち、任意の数値をString型の変数「tens」に与えて初期化します。
+		String tens = "0";
+
+		//一の位の3つの選択肢のうち、任意の数値をString型の変数「first」に与えて初期化します。
+		String first = "3";
+
+		//IntegerクラスのparseIntメソッドを使用して
+		//thousandsの値を変数名「numThousands」でInteger型に変換します。
+		Integer numThousands = Integer.parseInt(thousands) * 1000;
+
+		//IntegerクラスのparseIntメソッドを使用して
+		//hundredsの値を変数名「numHundreds」でInteger型に変換してみましょう。★
+		Integer numHundreds = Integer.parseInt(hundreds) * 100;
+
+		//★IntegerクラスのparseIntメソッドを使用して
+		//tensの値を変数名「numTens」でInteger型に変換してみましょう。★
+        Integer numTens = Integer.parseInt(tens);
+
+		//★IntegerクラスのparseIntメソッドを使用して
+		//firstの値を変数名「numFirst」でInteger型に変換してみましょう。★
+        Integer numFirst = Integer.parseInt(first);
+
+		//★Integer型の変数ansYearにnumThousands, numHundreds, numTens ,numFirstの合計を代入しましょう。
+        Integer ansYear = numThousands + numHundreds + numTens + numFirst;
+
+		//★Integer型の変数ansYearを使用して
+		//"江戸時代の開始は1603年"と表示させてみましょう。★
+		System.out.println("江戸時代の開始は " + ansYear +  "年");
+
+		//★numTensの値が0かつnumFirstの値が3であるか判定しましょう。
+		//判定にはequalsメソッドを使用しましょう。★
+		if(numTens == 0 && numFirst == 3) {
+			//条件と一致していた場合は"正解！"と表示させます。
+			System.out.println("正解！");
+		}
+	}
+
+}
+
+
+Integer.toString(数値型の変数);
+  数値型をString型に変換する
+  
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】大化の改新が起きた年を、二つの入力値から文字列結合して表示するプログラムを完成させましょう。
+
+
+		//Integer型の変数num1とnum2を64と5を代入して宣言します。
+		Integer num1 = 64;
+		Integer num2 = 5;
+
+		//★num1とnum2をtoStringを使用してString型に変換し、変数num3、num4に代入してみましょう。★
+        String num3 = Integer.toString(num1);
+        String num4 = Integer.toString(num2);
+
+		//★変数num3とnum4を使用し、「645年：大化の改新」と出力するように文字列結合して記述してみましょう。★
+        System.out.println(num3 + num4 + "年:大化の改新");
+	}
+
+}
+
+
+Integer.valueOf(文字列型の変数)
+  
+  
+class Trade {
+	public static void main(String[] args) {
+		String money = "10000";
+		//★Integer型のcashにString型のmoneyをIntegerのvalueOfを用いてInteger型に変換した値を格納しましょう。
+        Integer cash = Integer.valueOf(money);
+
+		//double型のcoinにcoinを1以上6未満の値をランダムで取得する値で割ったdouble型の値を返すbuyメソッドの戻り値を格納します。 
+		double coin = buy(cash);
+		//double型のgainにcoinを1以上6未満の値をランダムで取得する値で割ったdouble型の値を返すsellメソッドの戻り値からcashの値を引いた値を格納します。
+		double gain = sell(coin) - cash;
+		//double型のgainをもとに出力するメッセージを変更します。
+		massage(gain);
+	}
+
+	//double型の1以上6未満の値をランダムで取得した値をexchangeに格納、返すrandamDoubleメソッド。
+	//exchangeの値の逆襲を小数点第2位まで出力して為替を出力。
+	static double randomDouble(int num) {
+		double exchange = (Math.random() * num) + 1;
+		System.out.println("為替　：" + String.format("%.2f", 1/exchange) + "枚/円");
+		return exchange;
+	}
+	//double型の1以上6未満の値をランダムで取得した値で割ることでcashをcoinに変換するbuyメソッド。
+	//cashとcoinの値を出力。
+	static  double buy(Integer cash) {
+		double coin = cash / randomDouble(5);
+		System.out.println("コイン："+ cash + "円 => " + (int)coin + "枚");
+		return coin;
+	}
+	//double型の1以上6未満の値をランダムで取得した値でかけることでcoinをamount(お金)に変換するbuyメソッド。
+	//amountとcoinの値を出力。
+	static  double sell(double coin) {
+		double amount =  coin * randomDouble(5);
+		System.out.println("換金額：" + (int)coin + "枚 => " + (int)amount + "円");
+		return amount;
+	}
+	//double型のgainをもとに出力するメッセージを変更します。
+	//gainが0より大きい値か0以下かで値を出力する。
+	static void massage(double gain) {
+		System.out.println("--------------------------");
+		if(0 < gain) {
+			System.out.println("大儲け！！" + (int)gain + "円の利益");
+		}else {
+			System.out.println("散財！" + (int)gain + "円の損失");
+		}
+	}
+}
+
+
+null
+
+
+class Main {
+
+	public static void main(String[] args) {
+
+		//【問題】入力された値がnullか1以上かを判定して炎の燃え方を出力するプログラムを完成させましょう。
+
+		//Integer型の変数magicalPowerにnullもしくは、1以上の数を代入します。
+		Integer magicalPower = null;
+
+		//magicalPowerがnullの場合、「火が消える」と出力します。
+		if(magicalPower == null) {
+			System.out.println("火が消える");
+
+		//★magicalPowerが20以下の場合、「火が小さく燃える」と出力してみましょう。★
+		} else if (magicalPower <= 20) {
+            System.out.println("火が小さく燃える");
+
+		//★その他の場合、「火が大きく燃える」と出力してみましょう。★
+		} else {
+            System.out.println("火が大きく燃える");
+		}
+
+		//実行して確認後、変数magicalPowerに1以上の数値を与えて再度実行してみましょう。
+	}
+
 }
