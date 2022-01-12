@@ -808,9 +808,9 @@ class Trade {
 	//exchangeの値の逆襲を小数点第2位まで出力して為替を出力。
 	static double randomDouble(int num) {
 		double exchange = (Math.random() * num) + 1;
-		System.out.println("為替　：" + String.format("%.2f", 1/exchange) + "枚/円");
-		return exchange;
-	}
+		System.out.println("為替　：" + String.format("%.2f", 1/exchange) + "枚/円");                //★string.formatメソッド
+		return exchange;　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　https://www.sejuku.net/blog/14466
+	}　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　引数に指定した文字列(書式)を元にルールに沿った文字列を返すというメソッド
 	//double型の1以上6未満の値をランダムで取得した値で割ることでcashをcoinに変換するbuyメソッド。
 	//cashとcoinの値を出力。
 	static  double buy(Integer cash) {
