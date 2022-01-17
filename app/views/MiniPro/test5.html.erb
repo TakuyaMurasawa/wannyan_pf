@@ -869,6 +869,62 @@ class Main {
 }
 
 
+
+
+import java.util.HashMap;      //https://www.javadrive.jp/start/collection/index3.html
+
+class NullCheck {
+	public static void main(String[] args) {
+		//★String型のwordをnullで初期化しましょう。
+
+		String[] list = {"り","あ","と","う","が"};
+
+		attack(word);
+		word = list[1] + list[0] + list[3];
+		attack(word);
+		word = list[1] + list[0];
+		attack(word);
+	}
+
+	static void attack(String word) {
+		//★String型の変数wordがnullでなければ処理を行う。
+		if(word != null) {
+			//★wordCheckメソッドの引数にString型の変数wordを代入し、wordに該当する単語(mapのkey)がなく、戻り値がnullでなければ処理を行う。
+			if(wordCheck(word) != null) {
+				System.out.println(word + "：" + wordCheck(word));
+				System.out.println(word.length() + "ダメージ");
+			}else {
+				System.out.println(word + "：該当なし");
+			}
+		}
+	}
+
+	public static String wordCheck(String word) {
+		HashMap<String,String> words = new HashMap<String,String>();
+		words.put("あ", "亜・阿");
+		words.put("り","理・李");
+		words.put("が","画・我");
+		words.put("と","戸・途");
+		words.put("う","兎・雨");
+		words.put("あり","有・蟻");
+		words.put("あと","後・跡");
+		words.put("あう","会う・遭う");
+		words.put("がり","狩り・借り");
+		words.put("とり","鳥・鶏");
+		words.put("とう","党・塔");
+		words.put("あかり","明り・灯り");
+		words.put("あうと","アウト");
+		words.put("りとう","離党・離島");
+		words.put("かとう","加藤・果糖");
+		words.put("あとうり","後売り");
+		words.put("とりあう","取り合う");
+		words.put("ありがとう","ありがとう");
+		return words.get(word) ;
+	}
+}
+
+
+
 String a = null,   int b = null
 
 System.out.println(a);          //出力   null
