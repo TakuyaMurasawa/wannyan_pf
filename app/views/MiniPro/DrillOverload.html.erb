@@ -1,0 +1,48 @@
+メソッド名がobl312で、引数を持たないもの、intの引数を一つ持つもの（a）、二つ持つもの（a, b）の三つをオーバーロードで定義しましょう。
+なお、引数を持たないメソッドには「引数なし」、一つ持つものには「引数a=?」、二つ持つものには「引数a=?、b=?」と表示させるようにしましょう。
+その際、?には引数の値を代入して表示させましょう。
+mainメソッド内で、引数の数を変えてそれぞれのメソッドを呼び出しましょう。
+
+class Obl312{
+    static void obl312(){
+        System.out.println("引数なし");
+    }
+    
+    static void obl312(int a){
+        System.out.println("引数a=" + a);
+    }
+    
+    static void obl312(int a, int b){
+        System.out.println("引数a=" + a + "、b=" + b);
+    }
+    
+    public static void main(String[] main){
+        obl312();
+        
+        obl312(1);
+        
+        obl312(1,3);
+    }
+}                                                     //ststicがないとエラーになるのはなぜか？
+
+
+
+
+メソッド名がobl313で、int型の引数aを持つもの、int型の引数bと引数c持つもの、の二つをオーバーロードで定義しましょう。
+引数を一つ持つメソッド内で引数を二つ持つメソッドを呼び出し、引数を二つ持つメソッド内で引数bと引数cを加算して、表示させましょう。
+なお、引数を一つ持つメソッド内で引数を二つ持つメソッドを呼び出す際には、引数bには「引数a」を、引数cには「1」を受け渡しましょう。
+mainメソッド内で任意の数値を引数として、引数を一つ持つメソッドを呼び出しましょう。
+
+class Obl313{
+    static void obl313(int a){
+        obl313(a,1);
+    }
+    
+    static void obl313(int b, int c){
+        System.out.println(b + c);
+    }
+    
+    public static void main(String[] args){
+        obl313(3);
+    }
+}

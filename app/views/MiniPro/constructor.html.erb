@@ -1,0 +1,118 @@
+クラスConst316を定義してその中でコンストラクタを定義しましょう。コンストラクタの中では
+「コンストラクタが実行されました。」と表示させましょう。
+次に、メインメソッドを持つクラスConstMain316を定義し、その中でコンストラクタを呼び出して中身を表示させましょう。
+
+class Const316{
+    Const316(){
+        System.out.println("コンストラクタが実行されました。");
+    }
+}
+
+class ConstMain316{
+    public static void main(String[] args){
+        Const316 i = new Const316();
+    }
+}
+
+クラスConst317を定義してその中でint型のフィールドiを「0」で初期化して宣言しましょう。また、引数無しのコンストラクタを定義しましょう。
+コンストラクタの中でフィールドiを任意の数値に変更し、表示させましょう。
+次に、メインメソッドを持つクラスConstMain317を定義し、その中でコンストラクタを呼び出しましょう。
+
+class Const317{
+    int i = 0;
+    Const317(){
+        i = 3;
+        System.out.println(i);
+    }
+}
+
+class ConstMain317{
+    public static void main(String[] args){
+        Const317 con = new Const317();
+    }
+}
+
+
+クラスConst318を定義してその中でその中でint型のフィールドaとフィールドbを任意の値で初期化して宣言しましょう。また、引数無しのコンストラクタを定義しましょう。
+コンストラクタの中ではフィールドaの値に「2」を加算させ、フィールドbの値に「1」を減算させた後、a,bを足し合わせて表示させましょう。
+次に、メインメソッドを持つクラスConstMain318を定義し、その中でコンストラクタを呼び出しましょう。
+
+class Const318{
+    int a = 0;
+    int b = 0;
+    Const318(){
+        a += 2;
+        b -= 1;
+        System.out.println(a + b);
+    }
+}
+
+class ConstMain318{
+    public static void main(String[] args){
+        Const318 con = new Const318();
+    }
+}
+
+
+クラスConstObl321を定義してその中で引数を持たないコンストラクタとint型の引数を一つ持つコンストラクタをオーバーロードで定義しましょう。
+引数を持たないコンストラクタ内では「引数なし」と、一つ持つコンストラクタ内では「引数一つ」と表示しましょう。
+次に、メインメソッドを持つクラスConstOblMain321を定義し、その中でそれぞれのコンストラクタを呼び出して中身を表示させましょう。
+引数には任意の数値を使用しましょう。
+
+class ConstObl321{
+    ConstObl321(){
+        System.out.println("引数なし");
+    }
+    
+    ConstObl321(int a){
+        System.out.println("引数一つ");
+    }
+}
+
+class ConstOblMain321{
+    public static void main(String[] args){
+        ConstObl321 con = new ConstObl321();
+        con = new ConstObl321(1);
+    }
+}
+
+クラスConstObl322を定義してその中でint型のフィールドxと、int型の引数を一つもつコンストラクタを定義しましょう。
+その内で引数一つのコンストラクタの中でフィールドxに引数の値を代入し、表示させましょう。
+次に、メインメソッドを持つクラスConstOblMain322を定義し、その中で任意の数値を引数としてコンストラクタを呼び出しましょう。
+
+class ConstObl322{
+    int x;
+    ConstObl322(int a){
+        x += a;
+        System.out.println(x);
+    }
+}
+
+class ConstOblMain322{
+    public static void main(String[] args){
+        ConstObl322 con = new ConstObl322(2);
+    }
+}
+
+
+クラスConstObl323を定義してその中でint型の引数を二つ持つコンストラクタとint型の引数を三つ持つコンストラクタをオーバーロードで定義しましょう。
+引数を二つ持つコンストラクタ内で、引数を三つ持つコンストラクタを呼び出しましょう。
+三つの引数のうち二つはそのコンストラクタで受け取ったものを、三つ目の引数には任意の値を用いましょう。
+引数を三つ持つコンストラクタ内で、三つの引数を加算し、表示しましょう。
+次に、メインメソッドを持つクラスConstOblMain323を定義し、その中で引数を二つ持つコンストラクタを呼び出しましょう。
+
+class ConstObl323{
+    ConstObl323(int a, int b){
+        this(a,b,4);
+    }
+    
+    ConstObl323(int a, int b, int c){
+        System.out.println(a + b + c);
+    }
+}
+
+class ConstOblMain323{
+    public static void main(String[] args){
+        ConstObl323 con = new ConstObl323(1,3);
+    }
+}
