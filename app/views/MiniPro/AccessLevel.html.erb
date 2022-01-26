@@ -1,0 +1,45 @@
+Access331クラス内のフィールドとメソッドを、最も範囲の広い適切なアクセスレベルに変更してみましょう。
+
+class Access331{
+	public int a;
+	public void abc(){
+		System.out.println("abcメソッドです。");
+	}
+}
+
+class AccessMain331{
+	public static void main(String[] args){
+		Access331 access = new Access331();
+		System.out.println(access.a);
+		access.abc();
+	}
+}
+
+
+Access332クラス内のフィールドとメソッドを、Access332クラスだけが使用できるようにアクセスレベルに変更してみましょう。 
+
+class Access332{
+	private int a;
+	private void abc(){
+		System.out.println("abcメソッドです。");
+	}
+}
+
+
+Parent333クラス内のフィールドとメソッドを、適切なアクセスレベルのうち最も範囲の狭いものに変更し、
+Child333クラスからParent333クラス内のフィールドとメソッドを呼び出せるようにしましょう。
+（ただし、Child333はParent333とは別のパッケージに作成したものとする）
+
+class Parent333{
+	protected static int a;
+	protected static void abc(){
+		System.out.println("親クラスのメソッドです。");
+	}
+}
+
+class Child333 extends Parent333{
+	public static void main(String[] args){
+		System.out.println(a);
+		abc();
+	}                                                                          ##0
+}                                                                              親クラスのメソッドです。

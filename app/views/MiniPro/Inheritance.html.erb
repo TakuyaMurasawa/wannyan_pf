@@ -1,0 +1,60 @@
+「親クラス」Parent326を作成し、「子クラス」Child326でParent326クラスを継承してみましょう。 ※解答内容が合っていれば、結果欄に「合格！」と表示されます。
+
+class Parent326{
+}
+
+class Child326 extends Parent326{
+}
+
+
+
+「親クラス」Parent327を作成し、その中でコンストラクタを定義しましょう。
+コンストラクタの中では「親クラスのコンストラクタです。」と表示させましょう。
+次に、Parent327を継承した「子クラス」Child327を作成し、その中でコンストラクタを定義しましょう。
+コンストラクタの中では「子クラスのコンストラクタです。」と表示させましょう。
+メインメソッドを持つKeisyoMain327を作成し、子クラスをインスタンス化しましょう。
+
+class Parent327{
+    Parent327(){
+        System.out.println("親クラスのコンストラクタです。");
+    }
+}
+
+class Child327 extends Parent327{
+    Child327(){
+        System.out.println("子クラスのコンストラクタです。");
+    }
+}
+
+class KeisyoMain327{
+    public static void main(String[] args){                                   ##親クラスのコンストラクタです。
+        Child327 child = new Child327();                                        子クラスのコンストラクタです。
+    }
+}
+
+
+
+「親クラス」Parent328をつくってその中で戻り値と引数なしのメソッドを作成し、メソッドの中で「親クラスのメソッドです」と表示しましょう。
+次にParent03を継承した「子クラス」Child328を作成し、子クラス内で親クラスのメソッドを「super」を用いて呼び出しましょう。
+次に、メインメソッドを持つKeisyoMain328を作成し、子クラスをインスタンス化してメソッドを呼び出して表示させましょう。
+
+class Parent328{
+    void parentMethod(){
+        System.out.println("親クラスのメソッドです。");
+    }
+}
+
+class Child328 extends Parent328{
+    void childMethod(){
+        super.parentMethod();
+    }
+}
+
+class KeisyoMain328{
+    public static void main(String[] args){
+        Child328 child = new Child328();
+        child.childMethod();                                       ##親クラスのメソッドです。
+    }
+}
+
+

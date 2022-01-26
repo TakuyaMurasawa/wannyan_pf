@@ -1,0 +1,24 @@
+”親クラスのメソッドです。”と表示するメソッドmethodAを持つクラスOya01を作成しましょう。
+続けて、Oya01を継承し、”子クラスのメソッドです。”と表示するようにmethodAをオーバーライドするクラスKo01を作成しましょう。
+最後に、mainを持つクラスOverRide01を作成して、2つのクラスのインスタンス化・メソッドの呼び出しをさせ、2つのクラスの動作を確認しましょう。
+
+class Oya01{
+    protected void methodA(){
+        System.out.println("親クラスのメソッドです。");
+    }
+}
+
+class Ko01 extends Oya01{
+    public void methodA(){
+        System.out.println("子クラスのメソッドです。");
+    }
+}
+
+class OverRide01{
+    public static void main(String[] args){
+        Oya01 oya = new Oya01();
+		oya.methodA();
+		Ko01 ko = new Ko01();
+		ko.methodA();                                                      ##親クラスのメソッドです。
+    }                                                                    子クラスのメソッドです。
+}
