@@ -22,3 +22,40 @@ class OverRide01{
 		ko.methodA();                                                      ##親クラスのメソッドです。
     }                                                                    子クラスのメソッドです。
 }
+
+
+
+int型引数に2を足した数を表示するメソッドmethodBを持つクラスOya02を作成しましょう。
+続けて、Oya02を継承し、int型引数に2を掛けた数を表示するようにmethodBをオーバーライドするクラスKo02を作成しましょう。
+最後に、mainを持つクラスOverRide02を作成して、2つのクラスのインスタンス化・メソッドの呼び出しをさせ、2つのクラスの動作を確認しましょう。
+
+結果
+3
+2
+
+
+class Oya02{
+    void methodB(int i){
+        i += 2;
+        System.out.println(i);
+    }
+}
+
+class Ko02 extends Oya02{
+    void methodB(int i){
+        i *= 2;
+        System.out.println(i);
+    }
+}
+
+class OverRide02{
+    public static void main(String[] args){
+        Oya02 oya = new Oya02();
+        oya.methodB(1);
+        Ko02 ko = new Ko02();
+        ko.methodB(1);
+    }
+}
+
+
+
