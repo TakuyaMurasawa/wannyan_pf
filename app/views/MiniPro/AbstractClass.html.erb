@@ -1,0 +1,71 @@
+抽象メソッドtalk, mail, internetを持つ抽象クラスTyusyo02を作りましょう。 ※解答内容が合っていれば、結果欄に「合格！」と表示されます。
+
+---使用する制御文と関数---
+Control statements and functions
+
+abstract class クラス名 {
+}	抽象クラスを宣言する
+public abstract 戻り値 メソッド名(引数)	抽象メソッドを宣言する
+
+--------------------------
+
+abstract class Tyusyo02{
+    public abstract void talk();
+    
+    public abstract void mail();
+    
+    public abstract void internet();
+}
+
+
+
+sample03という名前の抽象メソッドと、”Hello!”と表示するメソッドhelloを持つ抽象クラスTyusyo03を作りましょう。 
+※解答内容が合っていれば、結果欄に「合格！」と表示されます。
+
+abstract class Tyusyo03{
+    public abstract void sample03();
+    
+    public void Tyusyo03(){                                                void Tyusyo03(){
+        System.out.println("Hello!");            惜しい                        System.out.println("Hello!");　　　　合格　　　　　　？？？？？
+    }       　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 }
+    
+    ？？？なぜアクセスレベルをpublic -> 指定なしにしなければいけないのか？？？？
+
+}
+
+
+
+moveという名前の抽象メソッドを持つ抽象クラスCarを作成しましょう。
+Carを継承し、抽象メソッドに”バスで移動します。”と表示するよう実装したクラスBus、
+同じくCarを継承し、抽象メソッドに”タクシーで移動します。”と表示するよう実装したクラスTaxiを作成しましょう。
+最後に、mainを持つクラスTyusyoExtends01を作成して、2つのクラスのインスタンス化・メソッドの呼び出しをさせ、2つのクラスの動作を確認しましょう。
+
+結果
+バスで移動します。
+タクシーで移動します。
+
+
+class TyusyoExtends01{
+    public static void main(String[] args){
+        Bus bus = new Bus();
+        bus.move();
+        Taxi taxi = new Taxi();
+        taxi.move();
+    }
+}
+
+abstract class Car{
+    public abstract void move();
+}
+
+class Bus extends Car{
+    public void move(){
+        System.out.println("バスで移動します。");
+    }
+}
+
+class Taxi extends Car{
+    public void move(){
+        System.out.println("タクシーで移動します。");
+    }
+}

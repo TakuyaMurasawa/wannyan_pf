@@ -59,3 +59,31 @@ class OverRide02{
 
 
 
+”親”と表示するメソッドmethodCを持つクラスOya03を作成しましょう。
+続けて、Oya03を継承し、methodCをオーバーライドするクラスKo03を作成しましょう。
+Ko03クラスのmethodCでは、”子”と表示するのに加え、オーバーライドした親クラスのメソッドも呼び出してください。
+最後に、mainを持つクラスOverRide03を作成して、子クラスのインスタンス化・メソッドの呼び出しをさせ、動作を確認しましょう。
+
+結果
+子
+親
+
+class Oya03{
+    void methodC(){
+        System.out.println("親");
+    }
+}
+
+class Ko03 extends Oya03{
+    void methodC(){
+        System.out.println("子");
+        super.methodC();
+    }
+}
+
+class OverRide03{
+    public static void main(String[] args){
+        Ko03 ko = new Ko03();
+        ko.methodC();
+    }
+}
