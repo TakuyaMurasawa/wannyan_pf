@@ -1,0 +1,66 @@
+interface
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数---
+Control statements and functions
+
+interface インターフェース名 {
+}	interfaceを宣言する
+
+public abstract 戻り値 メソッド名(引数)	抽象メソッドを宣言する
+
+class クラス名 implements インターフェース名 {
+}	interfaceの実装
+
+-----------------------------------
+
+---問 題--
+
+抽象メソッドopen, closeを持つSample02という名前のinterfaceを作りましょう。 
+
+interface Sample02{
+    public abstract void open();
+    public abstract void close();
+}
+
+
+---問 題---
+examination
+
+抽象メソッドmessageを持つインターフェースGreetingを作成しましょう。
+続けて、先程作成したインターフェースを実装したクラスMorningとDaytimeを作成しましょう。
+各メソッドではそれぞれ異なる文字を表示するよう実装してください。
+最後に、mainを持つクラスGreetingMainを作成して、2つのクラスのインスタンス化・メソッドの呼び出しをさせ、動作を確認しましょう。
+
+結果
+おはよう
+こんばんわ
+
+class GreetingMain{
+    public static void main(String[] args){
+        Morning asa = new Morning();
+        asa.message();
+        
+        Daytime day = new Daytime();
+        day.message();
+    }
+}
+
+interface Greeting{
+    public abstract void message();
+}
+
+class Morning implements Greeting{
+    public void message(){
+        System.out.println("おはよう");
+    }
+}
+
+class Daytime implements Greeting{
+    public void message(){
+        System.out.println("こんばんわ");
+    }
+}
+
+
+
