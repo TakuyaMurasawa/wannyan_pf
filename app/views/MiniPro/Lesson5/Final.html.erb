@@ -1,0 +1,28 @@
+final
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数---
+Control statements and functions
+
+final 型 変数名 = 100	変数の値を変更できなくなる
+public final 戻り値 メソッド名(引数) {
+}	オーバーライドできなくなる
+final class クラス名 {
+}	継承できなくなる
+
+---問 題---
+examination
+
+int型変数scoreにfinal修飾子を付加して宣言し、50を設定しましょう。
+scoreの値を表示しましょう。
+
+結果
+50
+
+
+class main{
+    public static void main(String[] args){
+        final int score = 50;
+        System.out.println(score);
+    }
+}
