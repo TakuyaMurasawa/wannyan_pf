@@ -13,3 +13,71 @@ static 戻り値 メソッド名(引数) {
 クラス名.メソッド名	別クラスのクラスメソッドの実行
 
 ---------------------------------
+
+---問 題---
+examination
+
+static修飾子を付加したint型のフィールドaを持つクラスStaticTest02を作成しましょう。
+mainメソッドを持つクラスStatic02を作成し、インスタンスを使用しない方法と、インスタンスを使用した方法の
+2パターンで変数aの値を表示しましょう。
+続けて、インスタンスを使用せずに変数aの値に3を設定し、同様に表示しましょう。
+続けて、インスタンスを使用して変数aの値に5を設定し、同様に表示しましょう。
+
+結果
+0
+0
+3
+3
+5
+5
+
+class StaticTest02{
+    public static int a;
+}
+
+class Static02{
+    public static void main(String[] args){
+        System.out.println(StaticTest02.a);
+        StaticTest02 test = new StaticTest02();
+        System.out.println(test.a);
+        
+        StaticTest02.a = 3;
+        System.out.println(StaticTest02.a);
+        System.out.println(test.a);
+        
+        test.a = 5;
+        System.out.println(StaticTest02.a);
+        System.out.println(test.a);
+    }
+}
+
+
+---問 題---
+examination
+
+methodBを実行するメソッドmethodAと、static修飾子を付加した”Hello”と表示するメソッドmethodBを持つ
+クラスStaticTest03を作成しましょう。
+mainメソッドを持つクラスStatic03を作成し、methodAとmethodBを呼び出しましょう。
+
+結果
+Hello
+Hello
+
+class StaticTest03{
+    public void methodA(){
+        methodB();
+    }
+    
+    public static void methodB(){
+        System.out.println("Hello");
+    }
+}
+
+class Ststic03{
+    public static void main(String[] args){
+        StaticTest03 test = new StaticTest03();
+        test.methodA();
+        
+        StaticTest03.methodB();
+    }
+}
