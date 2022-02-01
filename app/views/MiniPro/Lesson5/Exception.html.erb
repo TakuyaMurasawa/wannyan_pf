@@ -1,0 +1,127 @@
+例外
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数---
+Control statements and functions
+
+例外	プログラムの実行中に発生したエラーのこと。
+例外が発生した場合、例外が発生した箇所より後の処理は実行されない。
+
+---------------------------------------------
+
+---問 題---
+examination
+
+mainメソッドに0除算を行うprint文、その前後にそれぞれ”例外発生前”、”例外発生後”と表示するprint文を
+記述して実行し、何と表示されるか確認しましょう。
+
+
+
+結果
+例外発生前
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at Reigai01.main(JavaExec20220201104420.java:4)
+
+class Reigai01 {
+  public static void main(String[] args) {
+    System.out.println("例外発生前");
+    System.out.println(1 / 0);
+    System.out.println("例外発生後");
+  }
+}
+
+
+
+大きさ5のshort型の配列を作成し、for文で値を6個以上代入し、同時に値を表示するプログラムを作成・実行し、
+何行表示されるか確認しましょう。
+
+結果
+0
+1
+2
+3
+4
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
+	at Reigai02.main(JavaExec20220201105809.java:5)
+
+
+class Reigai02 {
+  public static void main(String[] args) {
+    short[] s = new short[5];
+    for (byte i = 0; i < 10; i++) {
+      s[i] = i;
+      System.out.println(s[i]);
+    }
+  }
+}]
+
+
+---問 題---
+examination
+
+0除算を行うprint文を記述したメソッドを作成し、mainメソッドでそのメソッドを呼び出しましょう。
+その前後にそれぞれ”例外発生前”、”例外発生後”と表示するprint文を記述して実行し、何と表示されるか確認しましょう。
+
+結果
+例外発生前
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at Reigai03.occur(JavaExec20220201105911.java:9)
+	at Reigai03.main(JavaExec20220201105911.java:4)
+
+
+class Reigai03 {
+  public static void main(String[] args) {
+    System.out.println("例外発生前");
+    occur();
+    System.out.println("例外発生後");
+  }
+
+  static void occur() {
+    System.out.println(1 / 0);
+  }
+}
+
+
+
+
+
+
+例外スタックトレース
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数---------------------------------------------------------------------------------------------------
+Control statements and functions
+
+スタックトレース	
+   処理でエラーが発生した時刻、原因、処理順序などのエラーの概要のこと
+
+スタックトレースの読み方	
+   例外クラス名: エラーの直接原因
+   at クラス名.メソッド名(ファイル名:そのファイルの何行目か)
+
+スタックトレースの例	
+   Exception in thread "main" java.lang.ArithmeticException: / by zeroat Hello.main(Hello.java:4)
+   ----------------------------------------------------------------------------------------------
+   ArithmeticExceptionという例外クラス：0による割り算
+   Helloクラスのmainメソッド（Hello.javaファイル：4行目)
+  
+----------------------------------------------------------------------------------------------------------------------------
+
+--問 題---
+examination
+
+mainメソッドに0除算を行うprint文を記述し、実行してみましょう。
+
+結果
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at ReigaiStackTrace01.main(JavaExec20220201122513.java:3)
+
+
+---エディターでプログラミング---
+Programming in the editor
+
+class ReigaiStackTrace01 {
+  public static void main(String[] args) {
+    System.out.println(1 / 0);
+  }
+}
