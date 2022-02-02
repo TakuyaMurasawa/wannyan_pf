@@ -125,3 +125,48 @@ class ReigaiStackTrace01 {
     System.out.println(1 / 0);
   }
 }
+
+
+
+
+例外 throw
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数-----------------------------------------------------------
+Control statements and functions
+
+例外クラス 変数名 = new 例外クラス();
+throw 変数名;	例外を発生させる（やり方その１）
+throw new 例外クラス();	例外を発生させる（やり方その２）
+
+※例外を発生させるときは、上記のどちら記述を用いても差はありません。
+
+----------------------------------------------------------------------------------
+
+---問 題---
+examination
+
+throwによってIllegalArgumentExceptionが発生するようにしましょう。
+その前後にそれぞれ”例外発生前”、”例外発生後”と表示するprint文を記述して実行し、
+コンパイルエラーが発生することを確認しましょう。
+※やり方その１の方法で試してみましょう。
+
+結果
+コンパイルエラー：
+Error on line 7
+in /util/JavaExec20220202171528.java:7: error: unreachable statement
+System.out.println("例外発生後");
+^
+
+--エディターでプログラミング---
+Programming in the editor
+
+class ReigaiThrow01 {
+  public static void main(String[] args) {
+    System.out.println("例外発生前");
+    IllegalArgumentException ex
+               = new IllegalArgumentException();
+    throw ex;
+    System.out.println("例外発生後");
+  }
+}
