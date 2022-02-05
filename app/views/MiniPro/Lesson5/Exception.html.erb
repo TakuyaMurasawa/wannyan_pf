@@ -212,3 +212,260 @@ try {	例外が発生する部分を囲む
 } catch (Exception e) {	例外発生時に実行する処理を囲む
 
 ---------------------------------------------------------------------------------
+
+---問 題---
+examination
+
+0除算を行うprint文をtry～catchで適切に囲み、try～catch文の前後、0除算の前後、例外発生時の
+5か所にそれぞれ異なるメッセージを表示するプログラムを作りましょう。
+
+結果
+try~catch前
+除算前
+例外発生
+try~catchｍ後
+
+
+class main{
+    public static void main(String[] args){
+        System.out.println("try~catch前");
+        try{
+            System.out.println("除算前");
+            System.out.println(1/0);
+            System.out.println("除算後");
+        }catch(Exception e){
+            System.out.println("例外発生");
+        }
+        System.out.println("try~catchｍ後");
+    }
+}
+
+
+---問 題---
+examination
+
+2を-2から5までの数で割った結果を表示するprint文をtry～catchで適切に囲み、
+try～catch文の前後、例外発生時の3か所にもそれぞれ異なるメッセージを表示するプログラムを作りましょう。
+
+結果
+try~catch前
+-1
+-2
+例外発生
+try~catch後
+
+
+class main{
+    public static void main(String[] args){
+        System.out.println("try~catch前");
+        try{
+            for(int i=-2; i<6;i++){
+                System.out.println(2/i);
+            }
+        }catch(Exception e){
+            System.out.println("例外発生");
+        }
+        System.out.println("try~catch後");
+    }
+}
+
+
+---問 題---
+examination
+
+RuntimeExceptionを生成してthrowするメソッドを作成しましょう。throws宣言を適切に記述しましょう。
+mainメソッドでメソッドを実行しましょう。その際、適切にtry～catchしましょう。
+また、例外をcatchした時は"例外発生"と表示しましょう。
+
+結果
+例外発生
+
+
+class main{
+    public static void main(String[] args){
+        try{
+            out();
+        }catch(Exception e){
+            System.out.println("例外発生");
+        }
+    }
+    
+    static void out() throws RuntimeException{
+            throw new RuntimeException();
+        }
+}
+
+
+---問 題---
+examination
+
+適当なクラスを作成し、NullPointerExceptionを生成してthrowするようにしましょう。throws宣言を適切に記述しましょう。
+mainを持つクラスを作成し、上記クラスのメソッドを実行しましょう。その際、適切にtry～catchしましょう。
+また、例外をcatchした時は"例外発生"と表示しましょう。
+
+結果
+例外発生
+
+
+class main {
+  public static void main(String[] args) {
+    try {
+      ReigaiThrowsTest03.ex();
+    } catch (Exception e) {
+      System.out.println("例外発生");
+    }
+  }
+}
+
+
+class ReigaiThrowsTest03 {
+  public static void ex() throws NullPointerException {
+    throw new NullPointerException();
+  }
+}
+
+
+
+
+例外と継承
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数---------------------------------------------------------------------
+Control statements and functions
+
+class クラス名 extends 例外 {
+}	                                    例外を継承して例外クラスを宣言する
+
+メソッド名 throws 例外	              発生した例外を呼び出し元に投げる
+
+try {	
+      例外が発生する部分を囲む
+    } catch (Exception e) {	
+      例外発生時に実行する処理を囲む
+    }
+
+----------------------------------------------------------------------------------------------
+---問 題---
+examination
+
+ClassNotFoundExceptionを継承したクラスMadeException01を作成しましょう。
+異なるクラスThrows01で先程作成した例外クラスをthrowするメソッドを作成しましょう。
+mainを持つクラスReigaiExtends01を作成し、上記クラスのメソッドを実行しましょう。
+その際、適切にtry～catchしましょう。
+また、例外をcatchした時は"例外発生"と表示しましょう。
+
+結果
+例外発生
+
+
+
+class ReigaiExtends01 {
+  public static void main(String[] args) {
+    try {
+      Throws01.ex();
+    } catch (Exception e) {
+      System.out.println("例外発生");
+    }
+  }
+}
+
+
+class Throws01 {
+  public static void ex() throws MadeException01 {
+    throw new MadeException01();
+  }
+
+}
+
+
+class MadeException01 extends ClassNotFoundException {
+
+}
+
+
+
+---問 題---
+examination
+
+ArithmeticExceptionを継承したクラスMadeException02を作成しましょう。
+異なるクラスThrows02で先程作成した例外クラスをthrowするメソッドを作成しましょう。
+mainを持つクラスReigaiExtends02を作成し、上記クラスのメソッドを実行しましょう。その際、適切にtry～catchしましょう。
+また、例外をcatchした時は"例外発生"と表示しましょう。
+
+結果
+例外発生
+
+
+class MadeException02 extends ArithmeticException{
+    
+}
+
+class Throws02{
+    static void out() throws MadeException02{
+        throw new MadeException02();
+    }
+}
+
+class ReigaiExtends02{
+    public static void main(String[] args){
+        try{
+            Throws02.out();
+        }catch(Exception e){
+            System.out.println("例外発生");
+        }
+    }
+}
+
+上記と結果は同じだがthrow02がない場合----------------------------------------------------------------------
+class MadeException02 extends ArithmeticException{
+    
+}
+
+class ReigaiExtends02{
+    public static void main(String[] args){
+        try{
+            MadeException02 out = new MadeException02();
+            throw out;
+        }catch(Exception e){
+            System.out.println("例外発生");
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+---問 題---
+examination
+
+ArrayIndexOutOfBoundsExceptionを継承したクラスMadeException03を作成しましょう。
+異なるクラスThrows03で先程作成した例外クラスをthrowするメソッドを作成しましょう。
+mainを持つクラスReigaiExtends03を作成し、上記クラスのメソッドを実行しましょう。
+その際、適切にtry～catchしましょう。
+また、例外をcatchした時は"例外発生"と表示しましょう。
+
+結果
+例外発生
+
+
+class MadeException03 extends ArrayIndexOutOfBoundsException{
+    
+}
+
+class Throws03{
+    static void out() throws MadeException03{
+        throw new MadeException03();
+    }
+}
+
+class ReigaiExtends03{
+    public static void main(String[] args){
+        try{
+            Throws03.out();
+        }catch(Exception e){
+            System.out.println("例外発生");
+        }
+    }
+}

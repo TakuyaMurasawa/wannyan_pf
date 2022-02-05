@@ -1,0 +1,72 @@
+起動引数
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数--------------------------------------------------------------------------------
+Control statements and functions
+
+起動引数
+(コマンドライン引数)	main 関数の引数で文字列型の配列
+文字列の最初のものは args[0] で参照できる
+
+-------------------------------------------------------------------------------------------------------
+
+
+---問 題---
+examination
+
+起動引数に「a」「b」を設定し、1行で表示しましょう。
+
+結果
+ab
+
+class KidoHikisu01 {
+	public static void main(String[] args) {
+		System.out.println(args[0] + args[1]);
+	}
+}
+
+起動引数:::a b
+
+
+---問 題---
+examination
+
+起動引数を設定し、起動引数の個数を表示しましょう。
+
+結果
+5
+
+class main{
+    public static void main(String[] args){
+        System.out.println(args.length);
+    }
+}
+
+起動引数:::a b c d e
+
+
+
+---問 題----------------------------------------------------------------------------------------
+examination
+
+起動引数に「a」「b」「c」「d」「e」を設定し、全ての値を表示しましょう。
+
+結果
+a
+b
+c
+d
+e
+
+
+class main{
+    public static void main(String[] args){
+        for(int i=0;i<5;i++){
+            System.out.println(args[i]);
+        }
+    }
+}
+
+起動引数：a b c d e
+
+
