@@ -38,11 +38,11 @@ examination
 
 class GreetingMain{
     public static void main(String[] args){
-        Morning asa = new Morning();
-        asa.message();
-        
-        Daytime day = new Daytime();
-        day.message();
+        Morning asa = new Morning();                   Greeting greeting = new Morning();
+        asa.message();                                 greeting.message();
+                                         
+        Daytime day = new Daytime();                   greeting = new Daytime();
+        day.message();                                 greeting.message();
     }
 }
 
