@@ -24,3 +24,106 @@ class main{
 		System.out.println(a.length());
 	}
 }
+
+
+---問 題----------------------------------------------------------------------------------------------------
+examination
+
+Stringに「ABCDEFG」を入れて、「ABCDEFGの長さは7です。」と表示してみましょう。ただし、長さはlengthを使用求めて下さい。
+結果
+ABCDEFGの長さは7です。
+
+class main{
+    public static void main(String[] args){
+        String a = "ABCDEFG";
+        System.out.println(a+"の長さは"+a.length()+"です。");
+    }
+}
+
+
+---問 題----------------------------------------------------------------------------------------------------------
+examination
+
+Stringに「ABCDEFG」を入れて、「ABCDEFGの長さは7です。」と表示してみましょう。ただし、長さはlengthを使用求めて下さい。
+その後、Stringクラスのオブジェクトに「こんにちは」を代入して、「こんにちはの長さは5です。」と再表示してみましょう。
+結果
+ABCDEFGの長さは7です。
+こんにちはの長さは5です。
+
+class main{
+	public static void main(String[] args){
+		String a = "ABCDEFG";
+		System.out.println(a + "の長さは"+ a.length() + "です。");
+		a = "こんにちは";
+		System.out.println(a + "の長さは"+ a.length() + "です。");
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+charAt
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数------------------------------------------------------------------------------------------
+Control statements and functions
+
+変数名.charAt(x)	String型変数のx文字目の文字をchar型で取得する。
+xには数字が入る
+
+-----------------------------------------------------------------------------------------------------------------
+
+---問 題---
+examination
+
+Stringを使用して「こんにちは」と表示してみましょう。また、charAtを使用して「に」を抜き出して表示してみましょう。
+結果
+こんにちは
+に
+
+class main{
+    public static void main(String[] args){
+        String a ="こんにちは";
+        System.out.println(a);
+        System.out.println(a.charAt(2));
+    }
+}
+
+
+equals
+を使ってプログラミングしてみよう
+
+---使用する制御文と関数---------------------------------------------------------------------------------
+Control statements and functions
+
+変数名A.equals(変数名B)	String型変数AとBが同じ文字列か判定する
+
+------------------------------------------------------------------------------------------------------
+
+---問 題---
+examination
+
+Stringクラスの変数aに「abc」を、bに「abc」を、cに「あいうえお」を設定し、aとb、aとcを比較して、
+等しければ「等しい」と、等しくなければ「等しくない」と表示するプログラムをつくってみましょう。
+
+結果
+等しい
+等しくない
+
+class main{
+    public static void main(String[] args){
+        String a = "abc";
+        String b = a;
+        String c = "あいうえお";
+        
+        if (a.equals(b)) {
+      		System.out.println("等しい");
+    	}else{
+      		System.out.println("等しくない");
+    	}
+    	if(a.equals(c)) {
+      		System.out.println("等しい");
+    	} else{
+      		System.out.println("等しくない");
+    	}
+    }
+}
