@@ -58,3 +58,29 @@ class KeisyoMain328{
 }
 
 
+public class Test{
+    public abstract void study(){
+    }
+}
+
+public class Test2 extends Test{
+    public void stidy(){
+        System.out.println("test2");
+    }
+}
+
+public class Test3 extends Test{
+    public void stidy(){
+        System.out.println("test3");
+    }
+}
+
+public class TestMain{
+    public static void main(String[] args){
+        Test t = new Test2();
+        t.study();                           //test2
+        
+        t = new Test3();
+        t.study();                           //test3
+    }
+}
